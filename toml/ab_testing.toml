@@ -1,0 +1,7 @@
+id = "ab_testing"
+type = "snippet"
+name = "A/B Testing"
+description = "Set up an A/B test by controlling what response is served based on cookies"
+tags = [ "Originless", "Middleware"]
+demo_url = "https://cloudflareworkers.com/#12a2962014e1324e3a416a5a76e1f81f:https://tutorial.cloudflareworkers.com"
+share = "/templates/snippets/ab_testing"
