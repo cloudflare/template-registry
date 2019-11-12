@@ -1,5 +1,7 @@
 import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
 
+import mime from 'mime'
+import toml from 'toml'
 /**
  * The DEBUG flag will do two things that help during development:
  * 1. we will skip caching on the edge, which makes it easier to
@@ -7,7 +9,8 @@ import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
  * 2. we will return an error message on exception in your Response rather
  *    than the default 404.html page.
  */
-const DEBUG = false
+
+const DEBUG = true
 
 addEventListener('fetch', event => {
   try {
@@ -32,7 +35,7 @@ async function handleEvent(event) {
    * You can add custom logic to how we fetch your assets
    * by configuring the function `mapRequestToAsset`
    */
-  // options.mapRequestToAsset = handlePrefix(/^\/docs/)
+  options.mapRequestToAsset = customMapRequestToAsset
 
   try {
     if (DEBUG) {
@@ -41,7 +44,12 @@ async function handleEvent(event) {
         bypassCache: true,
       }
     }
-    return await getAssetFromKV(event, options)
+
+    // let resp = await getAssetFromKV(event, options)
+    // let tomlData = await resp.text()
+    // let jsonData = toml.parse(tomlData)
+    const jsonData = await grabTemplates()
+    return new Response(JSON.stringify(jsonData))
   } catch (e) {
     // if an error is thrown try to serve the asset at 404.html
     if (!DEBUG) {
@@ -58,7 +66,7 @@ async function handleEvent(event) {
       } catch (e) {}
     }
 
-    return new Response(e.message || e.toString(), { status: 500 })
+    return new Response(e.stack || e.toString(), { status: 500 })
   }
 }
 
@@ -81,4 +89,35 @@ function handlePrefix(prefix) {
     // inherit all other props from the default request
     return new Request(url.toString(), defaultAssetKey)
   }
+}
+const customMapRequestToAsset = async request => {
+  const parsedUrl = new URL(request.url)
+  let pathname = parsedUrl.pathname
+
+  if (pathname.endsWith('/')) {
+    // If path looks like a directory append index.html
+    // e.g. If path is /about/ -> /about/index.html
+
+    pathname = pathname.concat('index.html')
+  }
+  if (pathname.endsWith('/')) {
+  }
+  parsedUrl.pathname = pathname
+  return new Request(parsedUrl, request)
+}
+/** 
+ * Looks for all the keys in __STATIC_CONTENT_MANIFEST
+ * and then locates and serves the TOML files 
+ * from __STATIC_CONTENT   */
+async function grabTemplates() {
+  const manifest = JSON.parse(__STATIC_CONTENT_MANIFEST)
+  const allKeys = Object.keys(manifest)
+  let results = []
+  for (const key of allKeys) {
+    // const allTomls = allKeys.reduce(async key => {
+    const tomlData = await __STATIC_CONTENT.get(manifest[key])
+    const jsonData = toml.parse(tomlData)
+    results.push(jsonData)
+  }
+  return results
 }
