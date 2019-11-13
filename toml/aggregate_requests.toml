@@ -1,5 +1,6 @@
 id = "aggregate_requests"
-name = "Aggregate Requests"
+type ="snippet"
+title = "Aggregate Requests"
 description = "Sends two GET request to two urls and aggregates the responses into one response."
 code = '''async function handleRequest(request) {
   const init = {

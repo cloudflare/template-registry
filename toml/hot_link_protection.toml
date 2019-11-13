@@ -1,5 +1,6 @@
 id = "hotlink_protection"
-name = "Hot-link Protection"
+type ="snippet"
+title = "Hot-link Protection"
 description = "Block other websites from linking to your content"
 code = """
 const HOMEPAGE_URL = 'https://tutorial.cloudflareworkers.com/'

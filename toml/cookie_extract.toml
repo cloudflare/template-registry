@@ -1,5 +1,6 @@
 id = "cookie_extract"
-name = "Extract Cookie Value"
+type ="snippet"
+title = "Extract Cookie Value"
 description = "Extracts the value of a cookie, given the cookie name."
 code = """
 const COOKIE_NAME = '__uid'

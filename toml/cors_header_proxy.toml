@@ -1,5 +1,6 @@
 id = "cors_header_proxy"
-name = "CORS Header Proxy"
+type ="snippet"
+title = "CORS Header Proxy"
 description = "Add necessary CORS headers to a third party API response"
 code = """async function handleRequest(request) {
   const url = new URL(request.url)

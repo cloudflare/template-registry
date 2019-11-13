@@ -1,5 +1,6 @@
 id = "signed_request"
-name = "Signed Request/Response"
+type ="snippet"
+title = "Signed Request/Response"
 description = "Check signatures of requests and sign responses with a private key"
 code = """
 // NOTE Requires ESM through webpack project type

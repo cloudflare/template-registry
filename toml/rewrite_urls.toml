@@ -1,5 +1,6 @@
 id = "rewrite_urls"
-name = "Rewrite URLs"
+type ="snippet"
+title = "Rewrite URLs"
 description = "Rewrite URLs using [HTML Rewriter](/reference/apis/html-rewriter)"
 code = """
 async function handleRequest(req) {

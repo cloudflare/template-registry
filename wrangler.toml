@@ -1,5 +1,6 @@
 account_id = "95e065d2e3f97a1e50bae58aea71df6d"
-name = "template-registry"
+type ="snippet"
+title = "template-registry"
 type = "webpack"
 workers_dev = true
 

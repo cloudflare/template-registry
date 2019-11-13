@@ -4,7 +4,7 @@ description = "Selects the logic based on the `request` method and URL. Use with
 repository_url = "https://github.com/cloudflare/worker-template-router"
 url = "/templates/boilerplates/router"
 weight = 97
-tags = [ "Originless", "Middleware"]
+
 tutorial = "boilerplates/router"
 
 [demos.bar]

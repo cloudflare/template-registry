@@ -1,5 +1,6 @@
 id = "fetch_json"
-name = "Fetch JSON"
+type ="snippet"
+title = "Fetch JSON"
 description = "Sends a GET request and reads in JSON from the response."
 code = """async function handleRequest(request) {
   const init = {

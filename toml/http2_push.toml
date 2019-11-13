@@ -1,5 +1,6 @@
 id = "http2_server_push"
-name = "HTTP/2 Server Push"
+type ="snippet"
+title = "HTTP/2 Server Push"
 description = "Push static assests to a client's browser without waiting for HTML to render"
 code = """async function handleRequest(request) {
   // If request is for test.css just serve the raw CSS

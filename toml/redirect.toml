@@ -1,5 +1,6 @@
 id = "redirect"
-name = "Redirect"
+type ="snippet"
+title = "Redirect"
 description = "Redirect a request by sending a 301 or 302 HTTP response"
 code = """async function handleRequest(request) {
   return Response.redirect(someURLToRedirectTo, code)

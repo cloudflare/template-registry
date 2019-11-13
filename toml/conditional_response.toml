@@ -1,5 +1,6 @@
 id = "conditional_response"
-name = "Conditional Response"
+type ="snippet"
+title = "Conditional Response"
 description = "Return a response based on the incoming request's URL, HTTP method, User Agent, IP address, ASN or device type (e.g. mobile)"
 code = """const BLOCKED_HOSTNAMES = ['nope.mywebsite.com', 'bye.website.com']
 async function handleRequest(request) {

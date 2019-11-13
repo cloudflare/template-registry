@@ -1,5 +1,6 @@
 id = "send_raw_html"
-name = "Send Raw HTML"
+type ="snippet"
+title = "Send Raw HTML"
 share = "/templates/snippets/send_raw_html"
 description = "Delivers an HTML page from HTML directly in the Worker script."
 code = """async function handleRequest(request) {

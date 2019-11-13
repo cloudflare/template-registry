@@ -1,5 +1,6 @@
 id = "alter_headers"
-name = "Alter Headers"
+type ="snippet"
+title = "Alter Headers"
 description = "Change the headers sent in a request or returned in a response"
 code ='''async function handleRequest(request) {
   // Make the headers mutable by re-constructing the Request.

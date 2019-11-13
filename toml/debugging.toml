@@ -1,5 +1,6 @@
 id = "debugging_tips"
-name = "Debugging Tips"
+type ="snippet"
+title = "Debugging Tips"
 description = "Send debug information in an errored response and to a logging service."
 code = """const LOG_URL = 'https://log-service.example.com/' // Service setup up to receive logs
 async function handleRequest(event) {

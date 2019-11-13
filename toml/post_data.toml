@@ -1,4 +1,5 @@
-name = "Read POST Data"
+type ="snippet"
+title = "Read POST Data"
 description = "Serves an HTML form, then reads POSTs from that form data. Can also be used to read JSON or other POST data from an incoming request."
 id = "post_data"
 code = """async function handlePostRequest(request) {
