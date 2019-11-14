@@ -23,4 +23,7 @@ const redirectMap = new Map([
   ['/bulk4', 'https://google.com'],
 ])
 """
-demo_url = "https://cloudflareworkers.com/#d17c3da192fd5c83ef7d28153ab32f3f:https://example.com/redirect/bulk1"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#d17c3da192fd5c83ef7d28153ab32f3f:https://example.com/redirect/bulk1"

@@ -1,7 +1,7 @@
 id = "send_raw_html"
 type ="snippet"
 title = "Send Raw HTML"
-share = "/templates/snippets/send_raw_html"
+share_url = "/templates/snippets/send_raw_html"
 description = "Delivers an HTML page from HTML directly in the Worker script."
 code = """async function handleRequest(request) {
   const init = {
@@ -31,5 +31,8 @@ const someHTML =  `<!DOCTYPE html>
 </html>
 `
 """
-demo_url = "https://cloudflareworkers.com/#ba06ef26637ab98b1f38a18dc527dc69:https://example.com"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#ba06ef26637ab98b1f38a18dc527dc69:https://example.com"
 tags = ['Originless']

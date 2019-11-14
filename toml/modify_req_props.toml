@@ -2,7 +2,7 @@ id = "modify_req_props"
 type ="snippet"
 title = "Modify Request Property"
 description = "Recommended practice for forming a [request](/reference/apis/request) based off the incoming request. First, takes in the incoming request then modifies specific properties like POST `body`, `redirect`, and the Cloudflare specific property `cf` and runs the fetch."
-share = "/templates/snippets/modify_req_props"
+share_url = "/templates/snippets/modify_req_props"
 code = """async function handleRequest(request) {
   /**
    * Best practice is to only assign new properties on the request
@@ -51,5 +51,8 @@ addEventListener('fetch', event => {
 const someHost = 'example.com'
 const someUrl = 'https://foo.example.com/api.js'
 """
-demo_url = "https://cloudflareworkers.com/#27b91145f66b6cfce1b3190ed7ba0bc5:https://example.com"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#27b91145f66b6cfce1b3190ed7ba0bc5:https://example.com"
 tags = ['Middleware']

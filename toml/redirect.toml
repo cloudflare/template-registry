@@ -16,4 +16,7 @@ addEventListener('fetch', async event => {
 const someURLToRedirectTo = 'https://www.google.com'
 const code = 301
 """
-demo_url = "https://cloudflareworkers.com/#ab385d4c4e43608684889eaa390d4218:https://example.com/"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#ab385d4c4e43608684889eaa390d4218:https://example.com/"

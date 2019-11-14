@@ -25,5 +25,8 @@ addEventListener('fetch', event => {
 const PRESHARED_AUTH_HEADER_KEY = 'X-Custom-PSK'
 const PRESHARED_AUTH_HEADER_VALUE = 'mypresharedkey'
 """
-demo_url = "https://cloudflareworkers.com/#7373b8c3c9c46c03c81562f00f663f81:https://tutorial.cloudflareworkers.com"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#7373b8c3c9c46c03c81562f00f663f81:https://tutorial.cloudflareworkers.com"
 tags = ['Middleware']

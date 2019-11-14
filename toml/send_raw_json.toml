@@ -19,5 +19,8 @@ const someJSON = {
   msg: 'this is some random json',
 }
 """
-demo_url = "https://cloudflareworkers.com/#83bc6debecf1dd443d3fabfbde0d2b3a:https://example.com"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#83bc6debecf1dd443d3fabfbde0d2b3a:https://example.com"
 tags = ['Originless']

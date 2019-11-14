@@ -36,5 +36,8 @@ function getCookie(request, name) {
   return result
 }
 """
-demo_url = "https://cloudflareworkers.com/#605946f0f09b396361d3dadb5abf29c8:https://tutorial.cloudflareworkers.com/"
-share = "/templates/snippets/cookie_extract"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#605946f0f09b396361d3dadb5abf29c8:https://tutorial.cloudflareworkers.com/"
+share_url = "/templates/snippets/cookie_extract"

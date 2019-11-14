@@ -26,5 +26,8 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 """
-demo_url = "https://cloudflareworkers.com/#d659b20dcf91df6e6de1bedbb94f6702:https://www.cloudflare.com/img/logo-cloudflare-dark.svg"
-share = "/templates/snippets/hotlink-protection"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#d659b20dcf91df6e6de1bedbb94f6702:https://www.cloudflare.com/img/logo-cloudflare-dark.svg"
+share_url = "/templates/snippets/hotlink-protection"

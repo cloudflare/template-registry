@@ -49,5 +49,8 @@ const body = {
   msg: 'I sent this to the fetch',
 }
 '''
-demo_url = "https://cloudflareworkers.com/#edce60b7d57c1e98fbe2d931aaaaf25f:https://tutorial.cloudflareworkers.com"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#edce60b7d57c1e98fbe2d931aaaaf25f:https://tutorial.cloudflareworkers.com"
 tags = ['Middleware']

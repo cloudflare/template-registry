@@ -2,9 +2,12 @@ id = "private_data_loss"
 type ="snippet"
 title = "Data Loss Prevention"
 description = "Prevent access to personal and sensitive data by inspecting response data from an origin server. In this example, sensitive data is defined by regexes for email, UK mobile number, or credit card number. If a match is detected, trigger a data breach alert and respond with either a block or the data stripped from the response."
-demo_url = "https://cloudflareworkers.com/#1b7ac657cfaec2635a319441800a5158:https://example.com/"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#1b7ac657cfaec2635a319441800a5158:https://example.com/"
 tags = ['Middleware']
-share = "/templates/snippets/private_data_loss"
+share_url = "/templates/snippets/private_data_loss"
 code = '''const SOME_HOOK_SERVER = 'https://webhook.flow-wolf.io/hook'
 const DEBUG = true
 /**

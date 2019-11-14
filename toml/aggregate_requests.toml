@@ -44,6 +44,9 @@ const url1 = someHost + '/requests/json'
 const url2 = someHost + '/requests/json'
 const type = 'application/json;charset=UTF-8'
 '''
-demo_url = "https://cloudflareworkers.com/#eaaa52283784c21aec989c64b9db32d3:https://example.com"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#eaaa52283784c21aec989c64b9db32d3:https://example.com"
 tags = ['Middleware']
-share = "/templates/snippets/aggregate_requests"
+share_url = "/templates/snippets/aggregate_requests"

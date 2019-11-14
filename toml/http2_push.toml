@@ -38,4 +38,7 @@ const HTML = `
 </html>
 `
 """
-demo_url = "https://cloudflareworkers.com/#f7b7e99bec493ba4f4847a095c4fa61c:https://tutorial.cloudflareworkers.com/"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#f7b7e99bec493ba4f4847a095c4fa61c:https://tutorial.cloudflareworkers.com/"

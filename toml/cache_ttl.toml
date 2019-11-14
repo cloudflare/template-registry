@@ -26,5 +26,8 @@ addEventListener('fetch', event => {
   return event.respondWith(handleRequest(event.request))
 })
 """
-demo_url = "https://cloudflareworkers.com/#8dd3e29985701b05e43b4dd74c387b74:https://example.com/"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#8dd3e29985701b05e43b4dd74c387b74:https://example.com/"
 tags = ['Middleware', 'Enterprise']

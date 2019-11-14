@@ -28,5 +28,8 @@ const ORIGINS = {
   'google.yourdomain.com': 'google.com',
 }
 """
-demo_url = "https://cloudflareworkers.com/#545c79e098708ca658dcbdb860c5021a:https://starwarsapi.yourdomain.com/"
-share = "/templates/snippets/bulk_origin_proxies"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#545c79e098708ca658dcbdb860c5021a:https://starwarsapi.yourdomain.com/"
+share_url = "/templates/snippets/bulk_origin_proxies"

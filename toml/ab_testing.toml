@@ -27,5 +27,7 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 '''
-demo_url = "https://cloudflareworkers.com/#12a2962014e1324e3a416a5a76e1f81f:https://tutorial.cloudflareworkers.com"
-share = "/templates/snippets/ab_testing"
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#12a2962014e1324e3a416a5a76e1f81f:https://tutorial.cloudflareworkers.com"
+share_url = "/templates/snippets/ab_testing"

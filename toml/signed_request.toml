@@ -39,5 +39,8 @@ async function signResponse(responseBody, response) {
   return response
 }
 """
-share = "/templates/snippets/signed_request"
-demo_url = "https://cloudflareworkers.com/?hide_editor#c22ea0102fb9dced927a9b870e9c546a:https://example.com/"
+share_url = "/templates/snippets/signed_request"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/?hide_editor#c22ea0102fb9dced927a9b870e9c546a:https://example.com/"
