@@ -50,6 +50,9 @@ addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 """
-demo_url="https://cloudflareworkers.com/#cec6695f67232bc76e3f396fcb2d5cc7:https://nope.mywebsite.com/"
+[demos.main]
+text="Demo"
+url = "https://cloudflareworkers.com/#cec6695f67232bc76e3f396fcb2d5cc7:https://nope.mywebsite.com/"
+
 tags=['Enterprise']
 share_url = "/templates/snippets/conditional_response"
