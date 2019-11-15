@@ -1,4 +1,5 @@
 id = "bulk_redirects"
+weight = 1
 type ="snippet"
 title = "Bulk Redirects"
 description = "Redirects requests to certain URLs based a mapped object to the request's URL."

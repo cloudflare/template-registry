@@ -1,4 +1,5 @@
 id = "binast_cf_worker"
+weight = 1
 type ="featured_boilerplate"
 title = "Binast-Cf-Worker"
 description = "Serve BinAST via a Cloudflare Worker"

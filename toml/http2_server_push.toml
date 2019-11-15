@@ -1,4 +1,5 @@
 id = "http2_server_push"
+weight = 1
 type ="snippet"
 title = "HTTP/2 Server Push"
 description = "Push static assests to a client's browser without waiting for HTML to render"

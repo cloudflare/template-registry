@@ -1,4 +1,5 @@
 id = "modify_req_props"
+weight = 1
 type ="snippet"
 title = "Modify Request Property"
 description = "Recommended practice for forming a [request](/reference/apis/request) based off the incoming request. First, takes in the incoming request then modifies specific properties like POST `body`, `redirect`, and the Cloudflare specific property `cf` and runs the fetch."

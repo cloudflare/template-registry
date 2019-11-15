@@ -3,11 +3,12 @@ type ="boilerplate"
 title = "Hello World Rust"
 description = "Simple Hello World in Rust"
 repository_url = "https://github.com/cloudflare/rustwasm-worker-template"
+weight = 98
+
 
 [demos.main]
 text = "Demo"
 url = "https://cloudflareworkers.com/#1992963c14c25bc8dc4c50f4cab740e5:https://tutorial.cloudflareworkers.com"
-weight = 98
 tags = ['Originless', 'Wasm']
 
 tutorial = "/templates/boilerplates/rustwasm"

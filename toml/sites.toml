@@ -1,4 +1,5 @@
 id = "sites"
+weight = 1
 type ="featured_boilerplate"
 title = "Worker Sites"
 description = "Get started with Workers Sites to easily deploy static assets to the Cloudflare edge."

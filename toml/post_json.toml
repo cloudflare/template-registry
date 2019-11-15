@@ -1,4 +1,5 @@
 id = "post_json"
+weight = 1
 type ="snippet"
 title = "Post JSON"
 description = "Sends a POST request with JSON data from the Workers script."

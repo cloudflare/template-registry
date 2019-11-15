@@ -1,4 +1,5 @@
 id = "emscripten"
+weight = 1
 type ="featured_boilerplate"
 title = "Emscripten + Wasm Image Resizer"
 description = "Image Resizer in C compiled to Wasm with Emscripten"

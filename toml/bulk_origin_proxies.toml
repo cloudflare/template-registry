@@ -1,4 +1,5 @@
 id="bulk_origin_proxies"
+weight = 1
 type ="snippet"
 title = "Bulk Origin Proxies"
 description = "Resolve requests to your domain to a set of proxy third-party origins"

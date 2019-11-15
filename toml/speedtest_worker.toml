@@ -1,4 +1,5 @@
 id = "speedtest_worker"
+weight = 1
 type ="featured_boilerplate"
 title = "Speedtest"
 description = "Measure download / upload connection speed from the client side, using the Performance Timing API"

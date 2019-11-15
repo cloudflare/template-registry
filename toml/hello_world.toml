@@ -1,4 +1,5 @@
 id = "hello_world"
+weight = 99
 type ="boilerplate"
 title = "Hello World"
 description = "Simple Hello World in JS"
@@ -7,6 +8,5 @@ repository_url = "https://github.com/cloudflare/worker-template"
 [demos.main]
 text = "Demo"
 url = "https://cloudflareworkers.com/#6626eb50f7b53c2d42b79d1082b9bd37:https://tutorial.cloudflareworkers.com"
-weight = 99
 
 tags = ['Originless']

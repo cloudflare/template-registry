@@ -1,4 +1,5 @@
 id = "debugging_tips"
+weight = 50
 type ="snippet"
 title = "Debugging Tips"
 description = "Send debug information in an errored response and to a logging service."

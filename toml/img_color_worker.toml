@@ -1,4 +1,5 @@
 id = "img_color_worker"
+weight = 1
 type ="featured_boilerplate"
 title = "Img-Color-Worker"
 description = "Retrieve the dominant color of a PNG or JPEG image"

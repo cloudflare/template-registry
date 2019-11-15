@@ -1,4 +1,5 @@
 id = "hotlink_protection"
+weight = 1
 type ="snippet"
 title = "Hot-link Protection"
 description = "Block other websites from linking to your content"

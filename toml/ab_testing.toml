@@ -1,4 +1,5 @@
 id = "ab_testing"
+weight = 1
 type ="snippet"
 title = "A/B Testing"
 description = "Set up an A/B test by controlling what response is served based on cookies"

@@ -1,4 +1,5 @@
 id = "cloud_storage"
+weight = 50
 type ="featured_boilerplate"
 title = "Cloud Storage"
 description = "Serve private AWS bucket files from a Worker script"

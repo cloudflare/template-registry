@@ -1,4 +1,5 @@
 id = "modify_res_props"
+weight = 1
 type ="snippet"
 title = "Modify Response"
 description = "Recommended practice for mutating a fetched [response](/reference/apis/response). First, fetches a request then modifies specific properties which are immutable: `status`, `statusText`, `headers` and `body`."

@@ -1,4 +1,5 @@
 id = "send_raw_html"
+weight = 1
 type ="snippet"
 title = "Send Raw HTML"
 share_url = "/templates/snippets/send_raw_html"

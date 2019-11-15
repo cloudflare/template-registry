@@ -1,4 +1,5 @@
 id = "cookie_extract"
+weight = 1
 type ="snippet"
 title = "Extract Cookie Value"
 description = "Extracts the value of a cookie, given the cookie name."

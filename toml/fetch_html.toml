@@ -1,4 +1,5 @@
 id = "fetch_html"
+weight = 20
 type ="snippet"
 title = "Fetch HTML"
 description = "Sends a request to a remote server, reads HTML from the response, then serves that HTML."

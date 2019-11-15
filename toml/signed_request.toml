@@ -1,4 +1,5 @@
 id = "signed_request"
+weight = 10
 type ="snippet"
 title = "Signed Request/Response"
 description = "Check signatures of requests and sign responses with a private key"
