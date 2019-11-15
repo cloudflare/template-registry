@@ -6,11 +6,11 @@
     - [Create a Snippet](#create-a-snippet)
     - [Create a Boilerplate](#create-a-boilerplate)
 - [Writing Templates](#writing-templates)
+    - [Boilerplate Format](#boilerplate-format)
+    - [Snippet Format](#snippet-format)
   - [Style](#style)
     - [JavaScript Styleguide](#javascript-styleguide)
     - [Rust Styleguide](#rust-styleguide)
-    - [Boilerplate Format](#boilerplate-format)
-    - [Snippet Format](#snippet-format)
 - [`id.toml`](#idtoml)
   - [Boilerplate](#boilerplate)
   - [Snippet](#snippet)
@@ -205,7 +205,7 @@ url = "" # a shared link generated from cloudflareworkers.com (can be an array)
    * `title`
    * `description`
    * `id` must match the `id` in `id.toml`
-2. Add a markdown file to the docs repo in [templates/pages](https://github.com/cloudflare/workers-docs/tree/master/content/templates/boilerplates) folder
+2. Add a markdown file to the docs repo in [templates/pages](https://github.com/cloudflare/workers-docs/tree/master/content/templates/pages) folder
 ## Boilerplate
 
 1. Host a public repo, and then test your project by running `wrangler generate https://github.com/<you>/<id>`.
