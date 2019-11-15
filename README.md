@@ -1,4 +1,23 @@
-[TOC]
+- [Introduction](#introduction)
+    - [What makes a Good Template](#what-makes-a-good-template)
+    - [ID your Template](#id-your-template)
+- [Snippets versus Boilerplates](#snippets-versus-boilerplates)
+- [Building a Template](#building-a-template)
+    - [Create a Snippet](#create-a-snippet)
+    - [Create a Boilerplate](#create-a-boilerplate)
+- [Writing Templates](#writing-templates)
+  - [Style](#style)
+    - [JavaScript Styleguide](#javascript-styleguide)
+    - [Rust Styleguide](#rust-styleguide)
+    - [Boilerplate Format](#boilerplate-format)
+    - [Snippet Format](#snippet-format)
+- [`id.toml`](#idtoml)
+  - [Boilerplate](#boilerplate)
+  - [Snippet](#snippet)
+- [Summit](#summit)
+  - [Boilerplate](#boilerplate-1)
+  - [Snippets](#snippets)
+
 
 # Introduction
 
@@ -8,16 +27,16 @@ The goal of any template is to be reusable amongst several projects, developers 
 
 Custom solutions that would could not clearly be reused make bad templates.
 
-### Name your Template
+### ID your Template
 
-Your template should have a programmatically name (I will refer to as `name`) and human readable description:
+Your template should have a programmatically ID (I will refer to as `id`) and human readable description:
 
 Examples:
 
 - Generic template for cloud storage with an arbitrary cloud provider - `cloud_storage`
 - Authentication with pre-shared header key - `auth_key_header`
 
-You'll want to make sure your name does not conflict with existing snippet names.
+You'll want to make sure your ID does not conflict with existing snippet names.
 
 # Snippets versus Boilerplates
 
@@ -58,16 +77,6 @@ First clone the [template creator](https://github.com/victoriabernard92/workers-
 Never commit the `worker` directory. Commit your `wrangler.toml`and `workers-site` directory (if applicable) with the required `type`, but don't commit the account tags.
 
 # Writing Templates
-
-## Style
-
-### JavaScript Styleguide
-
-Required, see guide [here](./style/javascript.md)
-
-### Rust Styleguide
-
-Required if writing Rust, see guide [here](./style/rust.md)
 
 ### Boilerplate Format
 
@@ -136,49 +145,76 @@ addEventListener('fetch', event => {
 
 Omit all blank links in your snippet for formatting purposes (i.e. A regex find should have 0 results for `\n\n`.)
 
-# `name.toml`
+For an example see [Modify Request URL](/data/snippets/modify_req_url.toml). 
 
-Once you've written the template you'd like to share, its time to configure your name.toml.  Templates have the following options:
+## Style
+
+### JavaScript Styleguide
+
+Required, see guide [here](./style/javascript.md)
+
+### Rust Styleguide
+
+Required if writing Rust, see guide [here](./style/rust.md)
+
+# `id.toml`
+
+Once you've written the template you'd like to share, its time to configure your id.toml.  Templates have the following options:
 ```
-# name.toml
+# id.toml
 # required fields
-id = "name"
-name = "Title of your template"
+id = "id"
+title =  "Title of your template"
 description = "Concise 1-2 sentences that explains what your template does"
+share_url="/templates/pages/id " #path to in depth tutorial of your code
 # optional
-tutorial="featured_boilerplates/name" #path to in depth tutorial of your code
-share="featured_boilerplates/name" #path to  page to share the code
 tags = ["Originless", "Enterprise"] # first letter must be caps
+[demos.main] 
+title = "Title"
+url = "" # a live demo of your code (can be an array)
+
 ```
 
 ## Boilerplate
 Specific boilerplate fields: 
 ```
-repository_url = "https://github.com/<you>/<name>"
-demo_url = "" # a live demo of your code (can be an array)
+repository_url = "https://github.com/<you>/<id>"
+[demos.main] 
+title = "Title"
+url = "" # a live demo of your code (can be an array)
 ```
 ## Snippet
 
 Fields specific to snippets: 
 ```
-demo_url = "" # a shared link generated from cloudflareworkers.com (can be an array)
 code = '''
 async function handleRequest(request) {
 ...
 ​```
+[demos.main] 
+title = "Title"
+url = "" # a shared link generated from cloudflareworkers.com (can be an array)
 ```
 
 # Summit
 
+**Required:**
+
+1. Add a `id.toml` file to the [TOML folder](../toml) in this repo. Make sure to include mandatory files:
+   * `demos`
+   * `title`
+   * `description`
+   * `id` must match the `id` in `id.toml`
+2. Add a markdown file to the docs repo in [templates/pages](https://github.com/cloudflare/workers-docs/tree/master/content/templates/boilerplates) folder
 ## Boilerplate
 
-1. Host a public repo, and then test your project by running `wrangler generate https://github.com/<you>/<name>`.
+1. Host a public repo, and then test your project by running `wrangler generate https://github.com/<you>/<id>`.
 2. Label the PR with the tag `template_gallery`  to have your code reviewed.
-3. Add a `name.toml` file to the [template gallery featured projects](/data/featured/). Include all the information that is in exisiting snippets there i.e. `demo_url`, `description`, etc.. Submit a PR to the [Cloudflare Workers Docs](https://github.com/cloudflare/cloudflare-docs)
+
 
 ## Snippets
 
 1. If you think the snippet will need a lot of review, include victoria (@victoriabernard92 on Github) to a PR review to your own repo, or share a gist.
-2. Add a `name.toml` file to the [template gallery snippets](/data/snippets/). Include all the information that is in exisiting snippets there i.e. `code`, `description`, etc..
-   For an example see [Modify Request URL](/data/snippets/modify_req_url.toml). Submit a PR to the [Cloudflare Workers Docs](https://github.com/cloudflare/cloudflare-docs)
+2. 
+   Submit a PR to the [Cloudflare Workers Docs](https://github.com/cloudflare/cloudflare-docs)
 
