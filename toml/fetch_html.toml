@@ -1,16 +1,16 @@
-id = "aggregate_requests"
+id = "fetch_html"
 weight = 20
 type ="snippet"
-title = "Aggregate Requests"
-description = "Sends two GET request to two urls and aggregates the responses into one response."
-code = '''async function handleRequest(request) {
+title = "Fetch HTML"
+description = "Sends a request to a remote server, reads HTML from the response, then serves that HTML."
+code = """async function handleRequest(request) {
   const init = {
     headers: {
-      'content-type': type,
+      'content-type': 'text/html;charset=UTF-8',
     },
   }
-  const responses = await Promise.all([fetch(url1, init), fetch(url2, init)])
-  const results = await Promise.all([gatherResponse(responses[0]), gatherResponse(responses[1])])
+  const response = await fetch(url, init)
+  const results = await gatherResponse(response)
   return new Response(results, init)
 }
 addEventListener('fetch', event => {
@@ -35,19 +35,14 @@ async function gatherResponse(response) {
   }
 }
 /**
- * Example someHost is set up to return JSON responses
- * Replace url1 and url2  with the hosts you wish to
- * send requests to
- * @param {string} url the URL to send the request to
- */
+ * Example someHost at url is set up to respond with HTML
+ * Replace url with the host you wish to send requests to
+ *  */
 const someHost = 'https://workers-tooling.cf/demos'
-const url1 = someHost + '/requests/json'
-const url2 = someHost + '/requests/json'
-const type = 'application/json;charset=UTF-8'
-'''
+const url = someHost + '/static/html'
+"""
 
 [demos.main]
 text = "Demo"
-url = "https://cloudflareworkers.com/#eaaa52283784c21aec989c64b9db32d3:https://example.com"
+url = "https://cloudflareworkers.com/#14a82a672534b0dd25b385a5d3de744c:https://example.com"
 tags = ['Middleware']
-share_url = "/templates/snippets/aggregate_requests"
