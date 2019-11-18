@@ -1,4 +1,4 @@
-id = "hotlink_protection"
+id = "hot_link_protection"
 weight = 1
 type = "snippet"
 title = "Hot-link Protection"
