@@ -1,5 +1,3 @@
-import { getAssetFromKV, mapRequestToAsset } from '@cloudflare/kv-asset-handler'
-
 import toml from 'toml'
 /**
  * The DEBUG flag will do two things that help during development:
