@@ -4,5 +4,5 @@ type = "webpack"
 workers_dev = true
 
 [site]
-bucket = "toml"
+bucket = "templates"
 entry-point = "workers-site"
