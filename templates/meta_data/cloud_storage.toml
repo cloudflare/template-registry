@@ -1,9 +1,8 @@
 id = "cloud_storage"
 weight = 50
-type ="featured_boilerplate"
+type = "featured_boilerplate"
 title = "Cloud Storage"
 description = "Serve private AWS bucket files from a Worker script"
 repository_url = "https://github.com/conzorkingkong/cloud-storage"
-
-tags = ['Middleware']
-share_url="/templates/featured_boilerplates/cloud_storage"
+tags = [ "Middleware" ]
+share_url = "/templates/featured_boilerplates/cloud_storage"

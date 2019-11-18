@@ -1,22 +1,8 @@
 id = "redirect"
 weight = 1
-type ="snippet"
+type = "snippet"
 title = "Redirect"
 description = "Redirect a request by sending a 301 or 302 HTTP response"
-code = """async function handleRequest(request) {
-  return Response.redirect(someURLToRedirectTo, code)
-}
-addEventListener('fetch', async event => {
-  event.respondWith(handleRequest(event.request))
-})
-/**
- * Example Input
- * @param {Request} url where to redirect the response
- * @param {number?=301|302} type permanent or temporary redirect
- */
-const someURLToRedirectTo = 'https://www.google.com'
-const code = 301
-"""
 
 [demos.main]
 text = "Demo"
