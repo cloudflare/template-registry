@@ -36,14 +36,17 @@ async function handleEvent(event: FetchEvent): Promise<Response> {
 
     let jsonResponse
     let path = new URL(url).pathname
-    let id = getIDFromPath(path)
-    console.log('id', id)
-    if (id) {
+    if (new RegExp(/^\/templates$/).test(path)) {
+      jsonResponse = await grabTemplates()
+    } else if (new RegExp(/^\/templates\/\w+$/).test(path)) {
+      let id = getIDFromPath(path)
       const key = formTomlKey(id)
       const jsonData = await grabTemplate(key)
       jsonResponse = new Response(JSON.stringify(jsonData))
     } else {
-      jsonResponse = await grabTemplates()
+      return new Response('Not a valid endpoint ' + path + 'e.g. /templates/ab_testing is valid', {
+        status: 404,
+      })
     }
     return jsonResponse
   } catch (e) {
@@ -105,10 +108,8 @@ const formJsKey = (id: string) => JS_PATH + '/' + id + '.js'
  * @param path  a URL path (e.g. /templates/:id)
  */
 const getIDFromPath = (path: string) => {
-  console.log('path.match(/^/templates/w+$/)', path.match(/^\/templates\/\w+$/))
-  console.log('path.search(/^/templates/[w|.]+$/)', path.search(/^\/templates\/[\w|.]+$/))
   let fileName =
-    path.search(/^\/templates\/[\w|.]+$/) !== -1 ? path.match(/^\/templates\/\w+$/)[0] : ''
+    path.search(/^\/templates\/[\w]+$/) !== -1 ? path.match(/^\/templates\/\w+$/)[0] : ''
   return fileName.replace('/templates/', '')
 }
 
