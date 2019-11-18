@@ -43,12 +43,19 @@ async function handleEvent(event) {
  * from __STATIC_CONTENT   */
 async function grabTemplates() {
   const manifest = JSON.parse(__STATIC_CONTENT_MANIFEST)
-  const allKeys = Object.keys(manifest)
+  const allKeys = Object.keys(manifest).filter(key => key.includes('.toml'))
   let results = []
   for (const key of allKeys) {
     // const allTomls = allKeys.reduce(async key => {
     const tomlData = await __STATIC_CONTENT.get(manifest[key])
     const jsonData = toml.parse(tomlData)
+
+    // grab the javascript file if it exists from templates/javascript/:id.js
+    const jsKey = `javascript/${jsonData.id}.js`
+    const jsData = await __STATIC_CONTENT.get(manifest[jsKey])
+    if (jsData) {
+      jsonData.code = jsData
+    }
     results.push(jsonData)
   }
   return results
@@ -60,5 +67,11 @@ async function grabTemplate(id) {
   const key = Object.keys(manifest).filter(key => key.includes(id))[0]
   const tomlData = await __STATIC_CONTENT.get(manifest[key])
   const jsonData = toml.parse(tomlData)
+  // get JS file if it exists
+  const jsKey = `javascript/${jsonData.id}.js`
+  const jsData = await __STATIC_CONTENT.get(manifest[jsKey])
+  if (jsData) {
+    jsonData.code = jsData
+  }
   return jsonData
 }
