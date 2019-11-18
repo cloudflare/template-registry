@@ -1,0 +1,10 @@
+id = "ab_testing"
+weight = 1
+type = "snippet"
+title = "A/B Testing"
+description = "Set up an A/B test by controlling what response is served based on cookies"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#12a2962014e1324e3a416a5a76e1f81f:https://tutorial.cloudflareworkers.com"
+share_url = "/templates/snippets/ab_testing"

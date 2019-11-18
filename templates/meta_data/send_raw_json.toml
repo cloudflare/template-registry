@@ -1,0 +1,10 @@
+id = "send_raw_json"
+weight = 50
+type = "snippet"
+title = "Send Raw JSON"
+description = "Renders a response of type `application/json` to the client"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#83bc6debecf1dd443d3fabfbde0d2b3a:https://example.com"
+tags = [ "Originless" ]

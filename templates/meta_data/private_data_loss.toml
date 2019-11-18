@@ -1,0 +1,11 @@
+id = "private_data_loss"
+weight = 1
+type = "snippet"
+title = "Data Loss Prevention"
+description = "Prevent access to personal and sensitive data by inspecting response data from an origin server. In this example, sensitive data is defined by regexes for email, UK mobile number, or credit card number. If a match is detected, trigger a data breach alert and respond with either a block or the data stripped from the response."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#1b7ac657cfaec2635a319441800a5158:https://example.com/"
+tags = [ "Middleware" ]
+share_url = "/templates/snippets/private_data_loss"

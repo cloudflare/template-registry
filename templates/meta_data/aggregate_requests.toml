@@ -1,0 +1,11 @@
+id = "aggregate_requests"
+weight = 20
+type = "snippet"
+title = "Aggregate Requests"
+description = "Sends two GET request to two urls and aggregates the responses into one response."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#eaaa52283784c21aec989c64b9db32d3:https://example.com"
+tags = [ "Middleware" ]
+share_url = "/templates/snippets/aggregate_requests"

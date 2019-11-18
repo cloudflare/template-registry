@@ -1,0 +1,10 @@
+id = "fetch_html"
+weight = 20
+type = "snippet"
+title = "Fetch HTML"
+description = "Sends a request to a remote server, reads HTML from the response, then serves that HTML."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#14a82a672534b0dd25b385a5d3de744c:https://example.com"
+tags = [ "Middleware" ]

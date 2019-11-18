@@ -1,0 +1,10 @@
+id = "bulk_origin_proxies"
+weight = 1
+type = "snippet"
+title = "Bulk Origin Proxies"
+description = "Resolve requests to your domain to a set of proxy third-party origins"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#545c79e098708ca658dcbdb860c5021a:https://starwarsapi.yourdomain.com/"
+share_url = "/templates/snippets/bulk_origin_proxies"

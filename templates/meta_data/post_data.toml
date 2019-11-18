@@ -1,0 +1,10 @@
+id = "post_data"
+weight = 1
+type = "snippet"
+title = "Read POST Data"
+description = "Serves an HTML form, then reads POSTs from that form data. Can also be used to read JSON or other POST data from an incoming request."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#a6a285e4e2bfbebea0be31b9eeaca3e6:https://example.com/form"
+tags = [ "Originless" ]

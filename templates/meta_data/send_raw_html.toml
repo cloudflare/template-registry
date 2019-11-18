@@ -1,0 +1,11 @@
+id = "send_raw_html"
+weight = 1
+type = "snippet"
+title = "Send Raw HTML"
+share_url = "/templates/snippets/send_raw_html"
+description = "Delivers an HTML page from HTML directly in the Worker script."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#ba06ef26637ab98b1f38a18dc527dc69:https://example.com"
+tags = [ "Originless" ]

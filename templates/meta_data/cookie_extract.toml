@@ -1,0 +1,10 @@
+id = "cookie_extract"
+weight = 1
+type = "snippet"
+title = "Extract Cookie Value"
+description = "Extracts the value of a cookie, given the cookie name."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#605946f0f09b396361d3dadb5abf29c8:https://tutorial.cloudflareworkers.com/"
+share_url = "/templates/snippets/cookie_extract"

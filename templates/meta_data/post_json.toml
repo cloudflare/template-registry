@@ -1,0 +1,10 @@
+id = "post_json"
+weight = 1
+type = "snippet"
+title = "Post JSON"
+description = "Sends a POST request with JSON data from the Workers script."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#edce60b7d57c1e98fbe2d931aaaaf25f:https://tutorial.cloudflareworkers.com"
+tags = [ "Middleware" ]

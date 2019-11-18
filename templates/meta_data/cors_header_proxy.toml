@@ -1,0 +1,9 @@
+id = "cors_header_proxy"
+weight = 1
+type = "snippet"
+title = "CORS Header Proxy"
+description = "Add necessary CORS headers to a third party API response"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#00ad8fc3ff55f6b740ed09470359dc0d:https://example.com/"

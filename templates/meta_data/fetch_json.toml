@@ -1,0 +1,10 @@
+id = "fetch_json"
+weight = 30
+type = "snippet"
+title = "Fetch JSON"
+description = "Sends a GET request and reads in JSON from the response."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#a45261f6682b048d9ed0e23a330d9cdb:https://example.com"
+tags = [ "Middleware" ]

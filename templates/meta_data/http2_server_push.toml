@@ -1,0 +1,9 @@
+id = "http2_server_push"
+weight = 1
+type = "snippet"
+title = "HTTP/2 Server Push"
+description = "Push static assests to a client's browser without waiting for HTML to render"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#f7b7e99bec493ba4f4847a095c4fa61c:https://tutorial.cloudflareworkers.com/"

@@ -1,0 +1,9 @@
+id = "redirect"
+weight = 1
+type = "snippet"
+title = "Redirect"
+description = "Redirect a request by sending a 301 or 302 HTTP response"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#ab385d4c4e43608684889eaa390d4218:https://example.com/"

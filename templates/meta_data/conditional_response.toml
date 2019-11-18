@@ -1,0 +1,11 @@
+id = "conditional_response"
+weight = 60
+type = "snippet"
+title = "Conditional Response"
+description = "Return a response based on the incoming request's URL, HTTP method, User Agent, IP address, ASN or device type (e.g. mobile)"
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#cec6695f67232bc76e3f396fcb2d5cc7:https://nope.mywebsite.com/"
+tags = [ "Enterprise" ]
+share_url = "/templates/snippets/conditional_response"

@@ -1,0 +1,11 @@
+id = "graphql_server"
+type = "featured_boilerplate"
+title = "Apollo GraphQL Server"
+weight = 2
+description = "🔥Lightning-fast, globally distributed Apollo GraphQL server, deployed at the edge using Cloudflare Workers."
+repository_url = "https://github.com/signalnerve/workers-graphql-server"
+
+[demos.main]
+text = "Demo"
+url = "https://workers-graphql.signalnerve.workers.dev/___graphql"
+tutorial = "featured_boilerplates/graphql"

@@ -1,0 +1,9 @@
+id = "bulk_redirects"
+weight = 1
+type = "snippet"
+title = "Bulk Redirects"
+description = "Redirects requests to certain URLs based a mapped object to the request's URL."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#d17c3da192fd5c83ef7d28153ab32f3f:https://example.com/redirect/bulk1"

@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "worker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Victoria Bernard <bernard.victoria22@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@iarna/toml": "^2.2.3",
+    "toml": "^3.0.0"
+  }
+}

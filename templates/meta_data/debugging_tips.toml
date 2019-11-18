@@ -1,0 +1,11 @@
+id = "debugging_tips"
+weight = 50
+type = "snippet"
+title = "Debugging Tips"
+description = "Send debug information in an errored response and to a logging service."
+tags = [ "Middleware" ]
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#5601380cdcb173e5b712bd82113ce47a:https://blah.workers-tooling.cf/fetch/error"
+tutorial = "/about/tips/debugging"

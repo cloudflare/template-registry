@@ -1,0 +1,10 @@
+id = "modify_res_props"
+weight = 1
+type = "snippet"
+title = "Modify Response"
+description = "Recommended practice for mutating a fetched [response](/reference/apis/response). First, fetches a request then modifies specific properties which are immutable: `status`, `statusText`, `headers` and `body`."
+
+[demos.main]
+text = "Demo"
+url = "https://cloudflareworkers.com/#daf0e96ae0ff4ce3f103c14bf6d968df:http://workers-tooling.cf/demos/static/json"
+tags = [ "Middleware" ]
