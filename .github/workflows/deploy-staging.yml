@@ -1,0 +1,25 @@
+name: Deploy staging site
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Navigate to repo
+      run: cd $GITHUB_WORKSPACE
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Install deps
+      run: npm install
+    - name: Publish
+      uses: signalnerve/wrangler-action@1.0.0
+      with:
+        apiKey: ${{ secrets.CF_API_KEY }}
+        email: ${{ secrets.CF_EMAIL }}
+        environment: "staging"
