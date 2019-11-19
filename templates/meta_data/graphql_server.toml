@@ -4,9 +4,9 @@ title = "Apollo GraphQL Server"
 weight = 2
 description = "🔥Lightning-fast, globally distributed Apollo GraphQL server, deployed at the edge using Cloudflare Workers."
 repository_url = "https://github.com/signalnerve/workers-graphql-server"
+share_url = "featured_boilerplates/graphql"
 
 [demos.main]
 text = "Demo"
 url = "https://workers-graphql.signalnerve.workers.dev/___graphql"
 
-share_url = "featured_boilerplates/graphql"
