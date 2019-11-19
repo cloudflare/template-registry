@@ -2,10 +2,13 @@
   "private": true,
   "name": "worker",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "author": "Victoria Bernard <bernard.victoria22@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "toml": "^3.0.0"
+  },
+  "scripts": {
+    "build": "tsc -d"
   }
 }

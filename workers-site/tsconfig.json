@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "noImplicitAny": true,
+    "target": "es5",
+    "allowJs": false,
+    "lib": ["webworker", "es7"]
+  },
+  "include": ["./*.ts", "./**/*.ts", "./test/**/*.ts", "./test/*.ts", "./types.d.ts"],
+  "exclude": ["node_modules/", "dist/"]
+}
