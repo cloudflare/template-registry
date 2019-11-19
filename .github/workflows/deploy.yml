@@ -17,6 +17,12 @@ jobs:
         node-version: '10.x'
     - name: Install deps
       run: npm install
+    - name: cd into workers-site
+      run: cd workers-site
+    - name: Build
+      run: npm run build
+    - name: cd ../
+      run: cd ../
     - name: Publish
       uses: signalnerve/wrangler-action@1.0.0
       with:
