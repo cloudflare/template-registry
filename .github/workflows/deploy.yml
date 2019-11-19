@@ -15,14 +15,14 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
+    - name: cd into workers-site
+      run: cd $GITHUB_WORKSPACE/workers-site
     - name: Install deps
       run: npm install
-    - name: cd into workers-site
-      run: cd workers-site
     - name: Build
       run: npm run build
-    - name: cd ../
-      run: cd ../
+    - name: cd $GITHUB_WORKSPACE
+      run: cd $GITHUB_WORKSPACE
     - name: Publish
       uses: signalnerve/wrangler-action@1.0.0
       with:
