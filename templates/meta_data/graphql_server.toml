@@ -8,4 +8,5 @@ repository_url = "https://github.com/signalnerve/workers-graphql-server"
 [demos.main]
 text = "Demo"
 url = "https://workers-graphql.signalnerve.workers.dev/___graphql"
-tutorial = "featured_boilerplates/graphql"
+
+share_url = "featured_boilerplates/graphql"

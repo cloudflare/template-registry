@@ -44,7 +44,7 @@ async function handleEvent(event: FetchEvent): Promise<Response> {
       const jsonData = await grabTemplate(key)
       jsonResponse = new Response(JSON.stringify(jsonData))
     } else {
-      return new Response('Not a valid endpoint ' + path + 'e.g. /templates/ab_testing is valid', {
+      return new Response('Not a valid endpoint ' + path + ' e.g. /templates/ab_testing is valid', {
         status: 404,
       })
     }

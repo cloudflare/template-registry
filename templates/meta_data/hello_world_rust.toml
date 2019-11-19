@@ -9,4 +9,5 @@ weight = 98
 text = "Demo"
 url = "https://cloudflareworkers.com/#1992963c14c25bc8dc4c50f4cab740e5:https://tutorial.cloudflareworkers.com"
 tags = [ "Originless", "Wasm" ]
-tutorial = "/templates/boilerplates/rustwasm"
+
+share_url = "/templates/boilerplates/rustwasm"
