@@ -36,7 +36,7 @@ async function handleEvent(event: FetchEvent): Promise<Response> {
 
     let jsonResponse
     let path = new URL(url).pathname
-    if (new RegExp(/^\/templates$/).test(path)) {
+    if (new RegExp(/^\/templates\/*$/).test(path)) {
       jsonResponse = await grabTemplates()
     } else if (new RegExp(/^\/templates\/\w+$/).test(path)) {
       let id = getIDFromPath(path)

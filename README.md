@@ -4,7 +4,7 @@ This repo runs a simple API via a Worker that serves all the template content co
 
 ## API
 
-The API is a Cloudflare Worker that lives in [workers-site](./workers-site). That uses KV to store the toml/JS data and parses the data for the appropriate enddpoints
+The API is a Cloudflare Worker that lives in [workers-site](./workers-site). That uses KV to store the toml/JS data and parses the data for the appropriate endpoints
 
 
 ## Data
