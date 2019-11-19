@@ -2,7 +2,7 @@
   "private": true,
   "name": "worker",
   "version": "1.0.0",
-  "main": "./dist/index.js",
+  "main": "workers-site/dist/index.js",
   "author": "Victoria Bernard <bernard.victoria22@gmail.com>",
   "license": "MIT",
   "dependencies": {
