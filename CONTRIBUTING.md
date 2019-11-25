@@ -1,22 +1,22 @@
 - [Introduction](#introduction)
-    - [What makes a Good Template](#what-makes-a-good-template)
-    - [ID your Template](#id-your-template)
+    + [What makes a Good Template](#what-makes-a-good-template)
+    + [ID your Template](#id-your-template)
 - [Snippets versus Boilerplates](#snippets-versus-boilerplates)
 - [Building a Template](#building-a-template)
-    - [Create a Snippet](#create-a-snippet)
-    - [Create a Boilerplate](#create-a-boilerplate)
+    + [Create a Snippet](#create-a-snippet)
+    + [Create a Boilerplate](#create-a-boilerplate)
 - [Writing Templates](#writing-templates)
-    - [Boilerplate Format](#boilerplate-format)
-    - [Snippet Format](#snippet-format)
-  - [Style](#style)
-    - [JavaScript Styleguide](#javascript-styleguide)
-    - [Rust Styleguide](#rust-styleguide)
-- [`id.toml`](#idtoml)
-  - [Boilerplate](#boilerplate)
-  - [Snippet](#snippet)
+    + [Boilerplate Format](#boilerplate-format)
+    + [Snippet Format](#snippet-format)
+  * [Style](#style)
+    + [JavaScript Styleguide](#javascript-styleguide)
+    + [Rust Styleguide](#rust-styleguide)
+- [`id.toml`](#-idtoml-)
+    + [Mandatory Fields for All](#mandatory-fields-for-all)
+    + [Optional Fields](#optional-fields)
 - [Summit](#summit)
-  - [Boilerplate](#boilerplate-1)
-  - [Snippets](#snippets)
+    + [**Required:**](#--required---)
+    + [Boilerplate Only](#boilerplate-only)
 
 
 # Introduction
@@ -135,7 +135,7 @@ function handleRequest(request: Request): Promise<Response>
 function handleRequest(request: Request): Response
 ```
 
-The event listener should almost always be exactly:
+The event listener should almost most always be exactly:
 
 ```javascript
 addEventListener('fetch', event => {
@@ -145,7 +145,7 @@ addEventListener('fetch', event => {
 
 Omit all blank links in your snippet for formatting purposes (i.e. A regex find should have 0 results for `\n\n`.)
 
-For an example see [Modify Request URL](/data/snippets/modify_req_url.toml). 
+For an example see [Modify Request URL](/templates/javascript). 
 
 ## Style
 
@@ -160,61 +160,40 @@ Required if writing Rust, see guide [here](./style/rust.md)
 # `id.toml`
 
 Once you've written the template you'd like to share, its time to configure your id.toml.  Templates have the following options:
-```
-# id.toml
-# required fields
+
+### Mandatory Fields for All
+```id.toml
 id = "id"
 title =  "Title of your template"
 description = "Concise 1-2 sentences that explains what your template does"
 share_url="/templates/pages/id " #path to in depth tutorial of your code
-# optional
+repository_url = "https://github.com/<you>/<id>" #boilerplate only required
+```
+
+### Optional Fields
+```id.toml
 tags = ["Originless", "Enterprise"] # first letter must be caps
-[demos.main] 
-title = "Title"
-url = "" # a live demo of your code (can be an array)
 
-```
-
-## Boilerplate
-Specific boilerplate fields: 
-```
-repository_url = "https://github.com/<you>/<id>"
 [demos.main] 
 title = "Title"
 url = "" # a live demo of your code (can be an array)
 ```
-## Snippet
 
-Fields specific to snippets: 
-```
-code = '''
-async function handleRequest(request) {
-...
-​```
-[demos.main] 
-title = "Title"
-url = "" # a shared link generated from cloudflareworkers.com (can be an array)
-```
 
 # Summit
 
-**Required:**
+### **Required:**
 
-1. Add a `id.toml` file to the [TOML folder](../toml) in this repo. Make sure to include mandatory files:
-   * `demos`
-   * `title`
-   * `description`
-   * `id` must match the `id` in `id.toml`
-2. Add a markdown file to the docs repo in [templates/pages](https://github.com/cloudflare/workers-docs/tree/master/content/templates/pages) folder
-## Boilerplate
+1. Submit a PR to this repo with the manadatory files:
+    -  `id.toml` - a file in the [meta data folder](./templates/meta_data). Make sure to include [Mandatory Fields](#mandatory-fields-for-all)
+    - `id.md`  - A markdown file to the docs repo in [templates/pages](https://github.com/cloudflare/workers-docs/tree/master/content/templates/pages) folder
+    - `id.js` (Snippets only) - a javascript file following [Snippet Format Guidelines](#snippet-format) in the [javascript folder](./templates/javascript)
+2. Double check all files use the same `id` in the filename
+### Boilerplate Only
 
 1. Host a public repo, and then test your project by running `wrangler generate https://github.com/<you>/<id>`.
-2. Label the PR with the tag `template_gallery`  to have your code reviewed.
+2. Hava a developer from Cloudflare's DX team review your code
 
 
-## Snippets
 
-1. If you think the snippet will need a lot of review, include victoria (@victoriabernard92 on Github) to a PR review to your own repo, or share a gist.
-2. 
-   Submit a PR to the [Cloudflare Workers Docs](https://github.com/cloudflare/cloudflare-docs)
 
