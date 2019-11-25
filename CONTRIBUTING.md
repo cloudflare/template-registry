@@ -15,7 +15,7 @@
     + [Mandatory Fields for All](#mandatory-fields-for-all)
     + [Optional Fields](#optional-fields)
 - [Summit](#summit)
-    + [**Required:**](#--required---)
+    + [**Required:**](#required)
     + [Boilerplate Only](#boilerplate-only)
 
 
@@ -185,9 +185,9 @@ url = "" # a live demo of your code (can be an array)
 ### **Required:**
 
 1. Submit a PR to this repo with the manadatory files:
-    -  `id.toml` - a file in the [meta data folder](./templates/meta_data). Make sure to include [Mandatory Fields](#mandatory-fields-for-all)
-    - `id.md`  - A markdown file to the docs repo in [templates/pages](https://github.com/cloudflare/workers-docs/tree/master/content/templates/pages) folder
-    - `id.js` (Snippets only) - a javascript file following [Snippet Format Guidelines](#snippet-format) in the [javascript folder](./templates/javascript)
+    - `id.toml` - a file in the [templates/meta_data](./templates/meta_data) folder. Make sure to include [mandatory fields](#mandatory-fields-for-all)
+    - `id.md`  - A markdown file to the docs repo in [templates/pages](https://github.com/cloudflare/workers-docs/tree/master/content/templates/pages) folder in the workers-docs
+    - `id.js` (Snippets only) - a javascript file following [Snippet Format Guidelines](#snippet-format) in the [templates/javascript](./templates/javascript) folder
 2. Double check all files use the same `id` in the filename
 ### Boilerplate Only
 
