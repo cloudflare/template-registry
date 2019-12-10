@@ -1,5 +1,0 @@
-id = "rewrite_urls"
-weight = 1
-type = "snippet"
-title = "Rewrite URLs"
-description = "Rewrite URLs using [HTML Rewriter](/reference/apis/html-rewriter)"
