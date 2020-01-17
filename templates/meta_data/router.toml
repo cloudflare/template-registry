@@ -6,7 +6,7 @@ repository_url = "https://github.com/cloudflare/worker-template-router"
 url = "/templates/boilerplates/router"
 weight = 97
 
-share_url = "boilerplates/router"
+share_url = "/templates/boilerplates/router"
 
 [demos.bar]
 text = "Demo /bar"
