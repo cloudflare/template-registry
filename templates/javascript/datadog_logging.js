@@ -2,7 +2,7 @@ const handleRequest = evt => {
   // Using waitUntil confirms that the log request finished before
   // the Workers script stops executing
   evt.waitUntil(log('Received request: ', evt.request.url))
-  return fetch(evt.request)
+  evt.respondWith(fetch(evt.request))
 }
 
 // Identifies the logging client in Datadog's UI. 
