@@ -1,0 +1,12 @@
+id = "auth_basic_http"
+weight = 1
+type = "snippet"
+title = "Basic HTTP authentication"
+description = "Password-protect whole websites or specific areas/pages. E.g. limit access to a staging version of a website you're building."
+share_url="/templates/pages/auth_basic_http"
+repository_url = "https://github.com/south-lane/cf-worker-basic-http-auth"
+
+[demos.main]
+text = "Demo (credentials: demouser/demopassword)"
+url = "https://cloudflareworkers.com/#f5d2cc53bd3d55486ddd14b1eb6e6c83:https://www.cloudflarestatus.com/"
+tags = [ "Middleware" ]
