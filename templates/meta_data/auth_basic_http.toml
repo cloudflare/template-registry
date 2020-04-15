@@ -2,7 +2,7 @@ id = "auth_basic_http"
 weight = 1
 type = "snippet"
 title = "Basic HTTP authentication"
-description = "Password-protect whole websites or specific areas/pages. E.g. limit access to a staging version of a website you're building."
+description = "Password-protect whole websites or specific areas/pages. Browsers will prompt for a password and username - hardcoded as `demouser`/`demopassword` - before serving a protected page. This uses basic authentication through the [`WWW-Authorization` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
 repository_url = "https://github.com/south-lane/cf-worker-basic-http-auth"
 
 [demos.main]
