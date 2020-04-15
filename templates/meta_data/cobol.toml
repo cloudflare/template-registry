@@ -1,0 +1,8 @@
+id = "cobol"
+weight = 1
+type = "boilerplate"
+title = "COBOL"
+description = "Set up a Worker written in COBOL"
+repository_url = "https://github.com/cloudflare/cobol-worker-template"
+share_url = "/templates/featured_boilerplates/cobol"
+tags = [ "WebAssembly" ]
