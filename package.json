@@ -6,9 +6,11 @@
   "author": "Victoria Bernard <bernard.victoria22@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "toml": "^3.0.0"
+    "toml": "^3.0.0",
+    "typescript": "^3.8.3"
   },
   "scripts": {
-    "build": "cd workers-site && tsc -d"
+    "build": "cd workers-site && tsc -d",
+    "start": "npm run build && wrangler preview --watch"
   }
 }
