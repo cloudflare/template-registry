@@ -1,0 +1,7 @@
+id = "cobol"
+weight = 1
+type = "boilerplate"
+title = "COBOL"
+description = "Return a Hello World Response in COBOL"
+repository_url = "https://github.com/cloudflare/cobol-worker-template"
+tags = [ "WebAssembly" ]
