@@ -5,7 +5,7 @@ async function handleRequest(request) {
   const TEST_RESPONSE = new Response('Test group') // fetch('/test/sompath', request)
   const CONTROL_RESPONSE = new Response('Control group') // fetch('/control/sompath', request)
   // Determine which group this requester is in.
-  const cookie = request.headers.get('cookie')
+  const cookie = request.headers.get('Cookie')
   if (cookie && cookie.includes(`${NAME}=control`)) {
     return CONTROL_RESPONSE
   } else if (cookie && cookie.includes(`${NAME}=test`)) {
