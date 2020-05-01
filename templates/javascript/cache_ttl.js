@@ -13,7 +13,7 @@ async function handleRequest(request) {
       cacheEverything: true, // override the default "cacheability" of the asset. For TTL, Cloudflare will still rely on headers set by the origin.
     },
   })
-  // must use Response constructor to inherit all of response's fields
+  // Reconstruct the Response object to make its headers mutable.
   response = new Response(response.body, response)
   //Set cache control headers to cache on browser for 25 minutes
   response.headers.set('Cache-Control', 'max-age=1500')
