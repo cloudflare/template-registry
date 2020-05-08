@@ -1,6 +1,6 @@
 async function handleRequest(request) {
   const url = new URL(request.url)
-  const apiurl = url.searchParams.get('apiurl')
+  const apiurl = unescape(unescape(url.search.substr(8)));
   // Rewrite request to point to API url. This also makes the request mutable
   // so we can add the correct Origin header to make the API server think
   // that this request isn't cross-site.
