@@ -11,6 +11,10 @@
   },
   "scripts": {
     "build": "cd workers-site && tsc -d",
+    "format": "prettier --write './templates/**/*.{ts,js,css,json,md}'",
     "start": "npm run build && wrangler preview --watch"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.5"
   }
 }
