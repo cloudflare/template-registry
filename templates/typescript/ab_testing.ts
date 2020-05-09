@@ -17,6 +17,9 @@ async function handleRequest(request) {
     return response
   }
 }
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
+
+export {}
