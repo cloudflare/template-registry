@@ -17,8 +17,8 @@ function redirect(request) {
 /**
  * A map of the url's to redirect to
  * @param {Object} countryMap
-*/
+ */
 const countryMap = {
-  "US" : "https://example.com/us",
-  "EU": "https://eu.example.com/"
+  US: 'https://example.com/us',
+  EU: 'https://eu.example.com/',
 }

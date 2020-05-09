@@ -9,7 +9,7 @@ async function handleRequest(request) {
 addEventListener('fetch', event => {
   return event.respondWith(handleRequest(event.request))
 })
-const someHTML =  `<!DOCTYPE html>
+const someHTML = `<!DOCTYPE html>
 <html>
   <body>
   <h1>Hello World</h1>

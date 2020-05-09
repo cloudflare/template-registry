@@ -9,7 +9,10 @@ async function handleRequest(request) {
   // Change status and statusText
   // Make sure to pass in originalResponse to preserving all parts
   // of the original response except the part we want to update.
-  let response = new Response(originalResponse, { status: 500, statusText: 'some message' })
+  let response = new Response(originalResponse, {
+    status: 500,
+    statusText: 'some message',
+  })
   // Change response body by adding the foo prop
   let body = JSON.stringify({ foo: 'bar', ...originalBody })
   response = new Response(body, response)
@@ -19,7 +22,9 @@ async function handleRequest(request) {
   if (response.headers.has(headerNameSrc)) {
     response.headers.set(headerNameDst, response.headers.get(headerNameSrc))
     console.log(
-      `Response header "${headerNameDst}" was set to "${response.headers.get(headerNameDst)}"`,
+      `Response header "${headerNameDst}" was set to "${response.headers.get(
+        headerNameDst,
+      )}"`,
     )
   }
   return response
@@ -31,5 +36,5 @@ addEventListener('fetch', event => {
  * @param {string} headerNameSrc the header to get the new value from
  * @param {string} headerNameDst the header to set based off of value in src
  */
-const headerNameSrc = 'foo'//'Orig-Header'
+const headerNameSrc = 'foo' //'Orig-Header'
 const headerNameDst = 'Last-Modified'

@@ -19,6 +19,6 @@ async function handleRequest(request) {
   response.headers.set('Cache-Control', 'max-age=1500')
   return response
 }
-addEventListener('fetch', (event) => {
+addEventListener('fetch', event => {
   return event.respondWith(handleRequest(event.request))
 })

@@ -13,7 +13,7 @@ async function handleRequest(request) {
   }
   return await fetch(request)
 }
-addEventListener('fetch', (event) => {
+addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
 /**
