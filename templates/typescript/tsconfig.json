@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "outDir": "../javascript",
+    "target": "ES2020",
+    "module": "ES2020",
+    "sourceMap": false,
+    "experimentalDecorators": false,
+    "lib": ["ES2020", "webworker"],
+    "types": ["@cloudflare/workers-types"]
+  },
+  "include": ["./*.ts"]
+}
