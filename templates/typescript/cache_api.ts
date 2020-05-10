@@ -1,4 +1,4 @@
-async function handleRequest(event) {
+async function handleRequest(event: FetchEvent): Promise<Response> {
   let request = event.request
   let cacheUrl = new URL(request.url)
   // hostname for a different zone
@@ -21,7 +21,7 @@ async function handleRequest(event) {
   }
   return response
 }
-async function handlePostRequest(event) {
+async function handlePostRequest(event: FetchEvent): Promise<Response> {
   let request = event.request
   let body = await request.clone().text()
   let hash = await sha256(body)
@@ -53,7 +53,7 @@ addEventListener('fetch', event => {
     return event.respondWith(new Response('Error thrown ' + e.message))
   }
 })
-async function sha256(message) {
+async function sha256(message: string): Promise<string> {
   // encode as UTF-8
   const msgBuffer = new TextEncoder().encode(message)
   // hash the message
@@ -65,3 +65,5 @@ async function sha256(message) {
   return hashHex
 }
 const someOtherHostname = 'my.herokuapp.com'
+
+export {}
