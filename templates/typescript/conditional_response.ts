@@ -1,5 +1,5 @@
 const BLOCKED_HOSTNAMES = ['nope.mywebsite.com', 'bye.website.com']
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   // Return a new Response based on..
   // On URL's hostname
   let url = new URL(request.url)
@@ -44,3 +44,5 @@ async function handleRequest(request) {
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
+
+export {}
