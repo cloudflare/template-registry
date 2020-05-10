@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   // Fetch the original request
   let response = await fetch(request)
   // If it's an image, engage hotlink protection based on the
@@ -20,3 +20,5 @@ addEventListener('fetch', event => {
 })
 const HOMEPAGE_URL = 'https://tutorial.cloudflareworkers.com/'
 const PROTECTED_TYPE = 'images/'
+
+export {}
