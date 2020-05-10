@@ -1,4 +1,4 @@
-async function handleRequest(event) {
+async function handleRequest(event: FetchEvent): Promise<Response> {
   let response
   try {
     response = await fetch(event.request)
@@ -15,7 +15,7 @@ async function handleRequest(event) {
   } catch (err) {
     // Without event.waitUntil(), our fetch() to our logging service may
     // or may not complete.
-    event.waitUntil(postLog(err.toString()))
+    event.waitUntil(postLog((err as Error).toString()))
     const stack = JSON.stringify(err.stack) || err
     // Copy the response and initialize body to the stack trace
     response = new Response(stack, response)
@@ -30,7 +30,7 @@ addEventListener('fetch', event => {
   event.passThroughOnException()
   event.respondWith(handleRequest(event))
 })
-function postLog(data) {
+function postLog(data: string) {
   return fetch(LOG_URL, {
     method: 'POST',
     body: data,
@@ -38,3 +38,5 @@ function postLog(data) {
 }
 // Service configured to receive logs
 const LOG_URL = 'https://log-service.example.com/'
+
+export {}
