@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   /**
    * Response properties are immutable. To change them, construct a new
    * Response, passing modified status or statusText in the ResponseInit
@@ -38,3 +38,5 @@ addEventListener('fetch', event => {
  */
 const headerNameSrc = 'foo' //'Orig-Header'
 const headerNameDst = 'Last-Modified'
+
+export {}
