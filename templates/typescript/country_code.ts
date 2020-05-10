@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   return redirect(request)
 }
 addEventListener('fetch', event => {
@@ -8,7 +8,7 @@ addEventListener('fetch', event => {
  * Returns a redirect determined by the country code
  * @param {Request} request
  */
-function redirect(request) {
+function redirect(request: Request): Response {
   // The `cf-ipcountry` header is not supported in the preview
   const country = request.headers.get('cf-ipcountry')
   const url = countryMap[country]
@@ -22,3 +22,5 @@ const countryMap = {
   US: 'https://example.com/us',
   EU: 'https://eu.example.com/',
 }
+
+export {}
