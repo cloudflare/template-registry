@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   /**
    * Best practice is to only assign new properties on the request
    * object (i.e. RequestInit props) through either a method or the constructor
@@ -9,7 +9,7 @@ async function handleRequest(request) {
     // Change body
     body: JSON.stringify({ bar: 'foo' }),
     // Change the redirect mode.
-    redirect: 'follow',
+    redirect: 'follow' as RequestRedirect,
     //Change headers, note this method will erase existing headers
     headers: {
       'Content-Type': 'application/json',
@@ -46,3 +46,5 @@ addEventListener('fetch', event => {
  */
 const someHost = 'example.com'
 const someUrl = 'https://foo.example.com/api.js'
+
+export {}
