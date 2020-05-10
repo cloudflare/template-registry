@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   const url = new URL(request.url)
   const apiurl = url.searchParams.get('apiurl')
   // Rewrite request to point to API url. This also makes the request mutable
@@ -15,7 +15,7 @@ async function handleRequest(request) {
   response.headers.append('Vary', 'Origin')
   return response
 }
-function handleOptions(request) {
+function handleOptions(request: Request): Response {
   // Make sure the necesssary headers are present
   // for this to be a valid pre-flight request
   if (
@@ -81,7 +81,7 @@ const apiurl = 'https://workers-tooling.cf/demos/demoapi'
 // The endpoint you want the CORS reverse proxy to be on
 const proxyEndpoint = '/corsproxy/'
 // The rest of this snippet for the demo page
-async function rawHtmlResponse(html) {
+async function rawHtmlResponse(html: string): Promise<Response> {
   return new Response(html, {
     headers: {
       'content-type': 'text/html;charset=UTF-8',
@@ -138,3 +138,5 @@ const demoPage = `
     </script>
   </body>
   </html>`
+
+export {}
