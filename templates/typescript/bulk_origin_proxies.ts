@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   let url = new URL(request.url)
   // Check if incoming hostname is
   // a key in the ORIGINS object
@@ -22,3 +22,5 @@ const ORIGINS = {
   'starwarsapi.yourdomain.com': 'swapi.co',
   'google.yourdomain.com': 'google.com',
 }
+
+export {}
