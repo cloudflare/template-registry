@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   // If request is for test.css just serve the raw CSS
   if (/test.css$/.test(request.url)) {
     return new Response(CSS, {
@@ -33,3 +33,5 @@ const HTML = `
 </body>
 </html>
 `
+
+export {}
