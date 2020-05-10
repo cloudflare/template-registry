@@ -1,4 +1,4 @@
-async function handleRequest() {
+async function handleRequest(): Promise<Response> {
   const init = {
     headers: {
       'content-type': 'text/html;charset=UTF-8',
@@ -16,7 +16,7 @@ addEventListener('fetch', event => {
  * Use await gatherResponse(..) in an async function to get the response body
  * @param {Response} response
  */
-async function gatherResponse(response) {
+async function gatherResponse(response: Response): Promise<string> {
   const { headers } = response
   const contentType = headers.get('content-type')
   if (contentType.includes('application/json')) {
@@ -35,3 +35,5 @@ async function gatherResponse(response) {
  */
 const someHost = 'https://workers-tooling.cf/demos'
 const url = someHost + '/static/html'
+
+export {}
