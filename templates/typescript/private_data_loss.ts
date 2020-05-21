@@ -4,7 +4,7 @@
  * emails and phone numbers from the response
  * Execution will be limited to MIME type "text/*"
  */
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   let response = await fetch(request)
   // Return origin responst, if response wasn't text
   let contentType = response.headers.get('content-type')
@@ -39,10 +39,12 @@ async function handleRequest(request) {
   }
   return new Response(text, response)
 }
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
-async function postDataBreach(request) {
+
+async function postDataBreach(request: Request): Promise<Response> {
   let trueClientIp = request.headers.get('cf-connecting-ip')
   let epoch = new Date().getTime()
   const body = {
@@ -59,5 +61,8 @@ async function postDataBreach(request) {
   }
   return await fetch(SOME_HOOK_SERVER, init)
 }
+
 const SOME_HOOK_SERVER = 'https://webhook.flow-wolf.io/hook'
 const DEBUG = true
+
+export {}
