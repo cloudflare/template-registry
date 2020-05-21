@@ -10,3 +10,5 @@ addEventListener('fetch', async event => {
  */
 const someURLToRedirectTo = 'https://www.google.com'
 const code = 301
+
+export {}
