@@ -51,7 +51,7 @@ async function readRequestBody(request) {
     return JSON.stringify(body)
   } else {
     let myBlob = await request.blob()
-    var objectURL = URL.createObjectURL(myBlob)
+    let objectURL = URL.createObjectURL(myBlob)
     return objectURL
   }
 }
