@@ -35,7 +35,7 @@ function rawHtmlResponse(html) {
  */
 async function readRequestBody(request) {
   const { headers } = request
-  const contentType = headers.get('content-type')
+  const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
     return JSON.stringify(await request.json())
   } else if (contentType.includes('application/text')) {

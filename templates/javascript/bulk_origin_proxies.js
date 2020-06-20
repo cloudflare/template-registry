@@ -1,11 +1,10 @@
 async function handleRequest(request) {
   let url = new URL(request.url)
-  // Check if incoming hostname is
-  // a key in the ORIGINS object
-  let target = ORIGINS[url.hostname]
-  // If it is, proxy request to that third party origin
-  if (target) {
+  // Check if incoming hostname is a key in the ORIGINS object
+  if (url.hostname in ORIGINS) {
+    const target = ORIGINS[url.hostname]
     url.hostname = target
+    // If it is, proxy request to that third party origin
     return fetch(url.toString(), request)
   }
   // Otherwise, process request as normal

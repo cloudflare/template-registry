@@ -19,8 +19,9 @@ async function handleRequest(request) {
   // Add a header using set method
   response.headers.set('foo', 'bar')
   // Set destination header to the value of the source header
-  if (response.headers.has(headerNameSrc)) {
-    response.headers.set(headerNameDst, response.headers.get(headerNameSrc))
+  const src = response.headers.get(headerNameSrc)
+  if (src != null) {
+    response.headers.set(headerNameDst, src)
     console.log(
       `Response header "${headerNameDst}" was set to "${response.headers.get(
         headerNameDst,

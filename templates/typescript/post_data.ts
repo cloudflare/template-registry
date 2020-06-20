@@ -35,7 +35,7 @@ function rawHtmlResponse(html: string): Response {
  */
 async function readRequestBody(request: Request): Promise<string> {
   const { headers } = request
-  const contentType = headers.get('content-type')
+  const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
     return JSON.stringify(await request.json())
   } else if (contentType.includes('application/text')) {
@@ -44,7 +44,7 @@ async function readRequestBody(request: Request): Promise<string> {
     return await request.text()
   } else if (contentType.includes('form')) {
     const formData = await request.formData()
-    let body = {}
+    let body: { [key: string]: FormDataEntryValue } = {}
     for (let entry of formData.entries()) {
       body[entry[0]] = entry[1]
     }

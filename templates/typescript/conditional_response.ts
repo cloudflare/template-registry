@@ -26,7 +26,7 @@ async function handleRequest(request: Request): Promise<Response> {
     return new Response('Block the IP 1.2.3.4', { status: 403 })
   }
   // On ASN
-  if (request.cf.asn == 64512) {
+  if (request.cf && request.cf.asn == 64512) {
     return new Response('Block the ASN 64512 response')
   }
   // On Device Type

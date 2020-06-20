@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   // Make the headers mutable by re-constructing the Request.
   request = new Request(request)
   request.headers.set('x-my-header', 'custom value')

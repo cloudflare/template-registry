@@ -20,7 +20,7 @@ addEventListener('fetch', event => {
  */
 async function gatherResponse(response: Response): Promise<string> {
   const { headers } = response
-  const contentType = headers.get('content-type')
+  const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
     return JSON.stringify(await response.json())
   } else if (contentType.includes('application/text')) {

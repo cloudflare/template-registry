@@ -1,5 +1,5 @@
 const COOKIE_NAME = '__uid'
-async function handleRequest(request) {
+function handleRequest(request) {
   const cookie = getCookie(request, COOKIE_NAME)
   if (cookie) {
     // respond with the cookie value
@@ -16,7 +16,7 @@ addEventListener('fetch', event => {
  * @param {string} name of the cookie to grab
  */
 function getCookie(request, name) {
-  let result = null
+  let result = ''
   let cookieString = request.headers.get('Cookie')
   if (cookieString) {
     let cookies = cookieString.split(';')

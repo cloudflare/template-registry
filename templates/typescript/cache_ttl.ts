@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   let url = new URL(request.url)
   // Only use the path for the cache key, removing query strings
   // and always storing HTTPS e.g. https://www.example.com/file-uri-here

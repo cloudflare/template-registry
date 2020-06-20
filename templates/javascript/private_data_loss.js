@@ -7,7 +7,7 @@
 async function handleRequest(request) {
   let response = await fetch(request)
   // Return origin responst, if response wasn't text
-  let contentType = response.headers.get('content-type')
+  let contentType = response.headers.get('content-type') || ''
   if (!contentType.toLowerCase().includes('text/')) {
     return response
   }

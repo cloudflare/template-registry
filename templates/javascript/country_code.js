@@ -8,11 +8,15 @@ addEventListener('fetch', event => {
  * Returns a redirect determined by the country code
  * @param {Request} request
  */
-function redirect(request) {
+async function redirect(request) {
   // The `cf-ipcountry` header is not supported in the preview
   const country = request.headers.get('cf-ipcountry')
-  const url = countryMap[country]
-  return Response.redirect(url)
+  if (country != null && country in countryMap) {
+    const url = countryMap[country]
+    return Response.redirect(url)
+  } else {
+    return await fetch(request)
+  }
 }
 /**
  * A map of the URLs to redirect to

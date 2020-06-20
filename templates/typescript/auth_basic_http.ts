@@ -1,10 +1,10 @@
 async function handleRequest(request: Request): Promise<Response> {
-  const authorization = request.headers.get('authorization')
   if (!request.headers.has('authorization')) {
     return getUnauthorizedResponse(
       'Provide User Name and Password to access this page.',
     )
   }
+  const authorization = request.headers.get('authorization') || ''
   const credentials = parseCredentials(authorization)
   if (credentials[0] !== USERNAME || credentials[1] !== PASSWORD) {
     return getUnauthorizedResponse(

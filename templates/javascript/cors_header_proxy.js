@@ -1,11 +1,14 @@
 async function handleRequest(request) {
   const url = new URL(request.url)
-  const apiurl = url.searchParams.get('apiurl')
+  let apiUrl = url.searchParams.get('apiurl')
+  if (apiUrl == null) {
+    apiUrl = API_URL
+  }
   // Rewrite request to point to API url. This also makes the request mutable
   // so we can add the correct Origin header to make the API server think
   // that this request isn't cross-site.
-  request = new Request(apiurl, request)
-  request.headers.set('Origin', new URL(apiurl).origin)
+  request = new Request(apiUrl, request)
+  request.headers.set('Origin', new URL(apiUrl).origin)
   let response = await fetch(request)
   // Recreate the response so we can modify the headers
   response = new Response(response.body, response)
@@ -42,7 +45,7 @@ function handleOptions(request) {
 addEventListener('fetch', event => {
   const request = event.request
   const url = new URL(request.url)
-  if (url.pathname.startsWith(proxyEndpoint)) {
+  if (url.pathname.startsWith(PROXY_ENDPOINT)) {
     if (request.method === 'OPTIONS') {
       // Handle CORS preflight requests
       event.respondWith(handleOptions(request))
@@ -63,7 +66,7 @@ addEventListener('fetch', event => {
     }
   } else {
     // Serve demo page
-    event.respondWith(rawHtmlResponse(demoPage))
+    event.respondWith(rawHtmlResponse(DEMO_PAGE))
   }
 })
 // We support the GET, POST, HEAD, and OPTIONS methods from any origin,
@@ -77,9 +80,9 @@ const corsHeaders = {
 }
 // The URL for the remote third party API you want to fetch from
 // but does not implement CORS
-const apiurl = 'https://workers-tooling.cf/demos/demoapi'
+const API_URL = 'https://workers-tooling.cf/demos/demoapi'
 // The endpoint you want the CORS reverse proxy to be on
-const proxyEndpoint = '/corsproxy/'
+const PROXY_ENDPOINT = '/corsproxy/'
 // The rest of this snippet for the demo page
 async function rawHtmlResponse(html) {
   return new Response(html, {
@@ -88,7 +91,7 @@ async function rawHtmlResponse(html) {
     },
   })
 }
-const demoPage = `
+const DEMO_PAGE = `
   <!DOCTYPE html>
   <html>
   <body>
@@ -105,18 +108,18 @@ const demoPage = `
     <script>
     let reqs = {};
     reqs.noproxy = async () => {
-      let response = await fetch('${apiurl}')
+      let response = await fetch('${API_URL}')
       return await response.json()
     }
     reqs.proxy = async () => {
-      let response = await fetch(window.location.origin + '${proxyEndpoint}?apiurl=${apiurl}')
+      let response = await fetch(window.location.origin + '${PROXY_ENDPOINT}?apiurl=${API_URL}')
       return await response.json()
     }
     reqs.proxypreflight = async () => {
       const reqBody = {
         msg: "Hello world!"
       }
-      let response = await fetch(window.location.origin + '${proxyEndpoint}?apiurl=${apiurl}', {
+      let response = await fetch(window.location.origin + '${PROXY_ENDPOINT}?apiurl=${API_URL}', {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
