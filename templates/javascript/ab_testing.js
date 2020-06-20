@@ -11,8 +11,8 @@ function handleRequest(request) {
     return TEST_RESPONSE
   } else {
     // If there is no cookie, this is a new client. Choose a group and set the cookie.
-    let group = Math.random() < 0.5 ? 'test' : 'control' // 50/50 split
-    let response = group === 'control' ? CONTROL_RESPONSE : TEST_RESPONSE
+    const group = Math.random() < 0.5 ? 'test' : 'control' // 50/50 split
+    const response = group === 'control' ? CONTROL_RESPONSE : TEST_RESPONSE
     response.headers.append('Set-Cookie', `${NAME}=${group}; path=/`)
     return response
   }

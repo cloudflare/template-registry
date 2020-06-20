@@ -1,5 +1,5 @@
 async function handleRequest(request) {
-  let psk = request.headers.get(PRESHARED_AUTH_HEADER_KEY)
+  const psk = request.headers.get(PRESHARED_AUTH_HEADER_KEY)
   if (psk === PRESHARED_AUTH_HEADER_VALUE) {
     // Correct preshared header key supplied. Fetching request
     // from origin

@@ -3,7 +3,7 @@ async function handleRequest(event: FetchEvent): Promise<Response> {
   try {
     response = await fetch(event.request)
     if (!response.ok) {
-      let body = await response.text()
+      const body = await response.text()
       throw new Error(
         'Bad response at origin. Status: ' +
           response.status +

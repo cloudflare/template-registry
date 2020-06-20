@@ -5,7 +5,7 @@ async function handleRequest(request: Request): Promise<Response> {
    * object.
    * Response Headers can be modified through the headers `set` method.
    */
-  let originalResponse = await fetch(request)
+  const originalResponse = await fetch(request)
   // Change status and statusText, but preserve body and headers
   let response = new Response(originalResponse.body, {
     status: 500,
@@ -13,8 +13,8 @@ async function handleRequest(request: Request): Promise<Response> {
     headers: originalResponse.headers,
   })
   // Change response body by adding the foo prop
-  let originalBody = await originalResponse.json()
-  let body = JSON.stringify({ foo: 'bar', ...originalBody })
+  const originalBody = await originalResponse.json()
+  const body = JSON.stringify({ foo: 'bar', ...originalBody })
   response = new Response(body, response)
   // Add a header using set method
   response.headers.set('foo', 'bar')

@@ -17,13 +17,13 @@ addEventListener('fetch', event => {
  */
 function getCookie(request, name) {
   let result = ''
-  let cookieString = request.headers.get('Cookie')
+  const cookieString = request.headers.get('Cookie')
   if (cookieString) {
-    let cookies = cookieString.split(';')
+    const cookies = cookieString.split(';')
     cookies.forEach(cookie => {
-      let cookieName = cookie.split('=')[0].trim()
+      const cookieName = cookie.split('=')[0].trim()
       if (cookieName === name) {
-        let cookieVal = cookie.split('=')[1]
+        const cookieVal = cookie.split('=')[1]
         result = cookieVal
       }
     })

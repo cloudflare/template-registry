@@ -1,10 +1,10 @@
 async function handleRequest(event) {
-  let request = event.request
-  let cacheUrl = new URL(request.url)
+  const request = event.request
+  const cacheUrl = new URL(request.url)
   // hostname for a different zone
   cacheUrl.hostname = someOtherHostname
-  let cacheKey = new Request(cacheUrl.toString(), request)
-  let cache = caches.default
+  const cacheKey = new Request(cacheUrl.toString(), request)
+  const cache = caches.default
   // Get this request from this zone's cache
   let response = await cache.match(cacheKey)
   if (!response) {
@@ -22,18 +22,18 @@ async function handleRequest(event) {
   return response
 }
 async function handlePostRequest(event) {
-  let request = event.request
-  let body = await request.clone().text()
-  let hash = await sha256(body)
-  let cacheUrl = new URL(request.url)
+  const request = event.request
+  const body = await request.clone().text()
+  const hash = await sha256(body)
+  const cacheUrl = new URL(request.url)
   // get/store the URL in cache by prepending the body's hash
   cacheUrl.pathname = '/posts' + cacheUrl.pathname + hash
   // Convert to a GET to be able to cache
-  let cacheKey = new Request(cacheUrl.toString(), {
+  const cacheKey = new Request(cacheUrl.toString(), {
     headers: request.headers,
     method: 'GET',
   })
-  let cache = caches.default
+  const cache = caches.default
   //try to find the cache key in the cache
   let response = await cache.match(cacheKey)
   // otherwise, fetch response to POST request from origin
@@ -45,7 +45,7 @@ async function handlePostRequest(event) {
 }
 addEventListener('fetch', event => {
   try {
-    let request = event.request
+    const request = event.request
     if (request.method.toUpperCase() === 'POST')
       return event.respondWith(handlePostRequest(event))
     return event.respondWith(handleRequest(event))

@@ -1,6 +1,6 @@
 async function handleRequest(request: Request): Promise<Response> {
-  let reqBody = await readRequestBody(request)
-  let retBody = `The request body sent in was ${reqBody}`
+  const reqBody = await readRequestBody(request)
+  const retBody = `The request body sent in was ${reqBody}`
   return new Response(retBody)
 }
 addEventListener('fetch', event => {
@@ -44,14 +44,14 @@ async function readRequestBody(request: Request): Promise<string> {
     return await request.text()
   } else if (contentType.includes('form')) {
     const formData = await request.formData()
-    let body: { [key: string]: FormDataEntryValue } = {}
-    for (let entry of formData.entries()) {
+    const body: { [key: string]: FormDataEntryValue } = {}
+    for (const entry of formData.entries()) {
       body[entry[0]] = entry[1]
     }
     return JSON.stringify(body)
   } else {
-    let myBlob = await request.blob()
-    let objectURL = URL.createObjectURL(myBlob)
+    const myBlob = await request.blob()
+    const objectURL = URL.createObjectURL(myBlob)
     return objectURL
   }
 }

@@ -1,8 +1,8 @@
 async function handleRequest(request: Request): Promise<Response> {
-  let url = new URL(request.url)
+  const url = new URL(request.url)
   // Only use the path for the cache key, removing query strings
   // and always storing HTTPS e.g. https://www.example.com/file-uri-here
-  let someCustomKey = `https://${url.hostname}${url.pathname}`
+  const someCustomKey = `https://${url.hostname}${url.pathname}`
   let response = await fetch(request, {
     cf: {
       // Tell Cloudflare's CDN to always cache this fetch regardless of content type

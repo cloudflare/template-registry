@@ -1,5 +1,5 @@
 async function handleRequest(request) {
-  let url = new URL(request.url)
+  const url = new URL(request.url)
   // Check if incoming hostname is a key in the ORIGINS object
   if (url.hostname in ORIGINS) {
     const target = ORIGINS[url.hostname]

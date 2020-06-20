@@ -33,7 +33,7 @@ function parseCredentials(authorization) {
  * @returns {Response}
  */
 function getUnauthorizedResponse(message) {
-  let response = new Response(message, {
+  const response = new Response(message, {
     status: 401,
   })
   response.headers.set('WWW-Authenticate', `Basic realm="${REALM}"`)

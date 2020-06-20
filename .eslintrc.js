@@ -17,8 +17,5 @@ module.exports = {
         "ecmaVersion": 11,
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint"],
-    "rules": {
-        "prefer-const": 0
-    }
+    "plugins": ["@typescript-eslint"]
 };

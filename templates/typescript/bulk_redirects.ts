@@ -1,7 +1,7 @@
 async function handleRequest(request: Request): Promise<Response> {
-  let requestURL = new URL(request.url)
-  let path = requestURL.pathname.split('/redirect')[1]
-  let location = redirectMap.get(path)
+  const requestURL = new URL(request.url)
+  const path = requestURL.pathname.split('/redirect')[1]
+  const location = redirectMap.get(path)
   if (location) {
     return Response.redirect(location, 301)
   }

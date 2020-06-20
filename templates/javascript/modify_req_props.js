@@ -3,7 +3,7 @@ async function handleRequest(request) {
    * Best practice is to only assign new properties on the request
    * object (i.e. RequestInit props) through either a method or the constructor
    */
-  let newRequestInit = {
+  const newRequestInit = {
     // Change method
     method: 'POST',
     // Change body
@@ -18,7 +18,7 @@ async function handleRequest(request) {
     cf: { apps: false },
   }
   // Change just the host
-  let url = new URL(someUrl)
+  const url = new URL(someUrl)
   url.hostname = someHost
   // Best practice is to always use the original request to construct the new request
   // thereby cloning all the attributes, applying the URL also requires a constructor
