@@ -6,7 +6,7 @@
  */
 async function handleRequest(request) {
   const response = await fetch(request)
-  // Return origin responst, if response wasn't text
+  // Return origin response, if response wasn't text
   const contentType = response.headers.get('content-type') || ''
   if (!contentType.toLowerCase().includes('text/')) {
     return response
@@ -28,7 +28,7 @@ async function handleRequest(request) {
       // alert a data breach by posting to a webhook server
       await postDataBreach(request)
       // respond with a block if credit card, else replace
-      // senstive text with *'s
+      // sensitive text with *'s
       return kind === 'creditCard'
         ? new Response(kind + ' found\nForbidden\n', {
             status: 403,
