@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   const url = new URL(request.url)
   // Check if incoming hostname is a key in the ORIGINS object
   if (url.hostname in ORIGINS) {
@@ -17,7 +17,9 @@ addEventListener('fetch', event => {
  * An object with different URLs to fetch
  * @param {Object} ORIGINS
  */
-const ORIGINS = {
+const ORIGINS: { [key: string]: string } = {
   'starwarsapi.yourdomain.com': 'swapi.co',
   'google.yourdomain.com': 'google.com',
 }
+
+export {}

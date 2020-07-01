@@ -6,11 +6,33 @@
   "author": "Victoria Bernard <bernard.victoria22@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@cloudflare/workers-types": "^2.0.0",
     "toml": "^3.0.0",
     "typescript": "^3.8.3"
   },
   "scripts": {
     "build": "cd workers-site && tsc -d",
-    "start": "npm run build && wrangler preview --watch"
+    "lint": "eslint './templates/**/*.ts' --cache --fix && prettier --write ./templates/**/*.{js,ts}",
+    "start": "npm run build && wrangler preview --watch",
+    "transpile": "tsc -p ./templates/typescript/tsconfig.json"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.3.0",
+    "@typescript-eslint/parser": "^3.3.0",
+    "eslint": "^7.3.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./templates/**/*.ts": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }

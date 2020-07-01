@@ -4,7 +4,7 @@
  * emails and phone numbers from the response
  * Execution will be limited to MIME type "text/*"
  */
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   const response = await fetch(request)
   // Return origin responst, if response wasn't text
   const contentType = response.headers.get('content-type') || ''
@@ -16,7 +16,7 @@ async function handleRequest(request) {
     ? // for testing only - replace the response from the origin with an email
       text.replace('You may use this', 'me@example.com may use this')
     : text
-  const sensitiveRegexsMap = {
+  const sensitiveRegexsMap: { [key: string]: string } = {
     email: String.raw`\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b`,
     phone: String.raw`\b07\d{9}\b`,
     creditCard: String.raw`\b(?:4[0-9]{12}(?:[0-9]{3})?|(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\d{3})\d{11})\b`,
@@ -39,10 +39,12 @@ async function handleRequest(request) {
   }
   return new Response(text, response)
 }
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
-async function postDataBreach(request) {
+
+async function postDataBreach(request: Request): Promise<Response> {
   const trueClientIp = request.headers.get('cf-connecting-ip')
   const epoch = new Date().getTime()
   const body = {
@@ -59,5 +61,8 @@ async function postDataBreach(request) {
   }
   return await fetch(SOME_HOOK_SERVER, init)
 }
+
 const SOME_HOOK_SERVER = 'https://webhook.flow-wolf.io/hook'
 const DEBUG = true
+
+export {}

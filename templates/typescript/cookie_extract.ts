@@ -1,5 +1,5 @@
 const COOKIE_NAME = '__uid'
-function handleRequest(request) {
+function handleRequest(request: Request): Response {
   const cookie = getCookie(request, COOKIE_NAME)
   if (cookie) {
     // respond with the cookie value
@@ -15,7 +15,7 @@ addEventListener('fetch', event => {
  * @param {Request} request incoming Request
  * @param {string} name of the cookie to grab
  */
-function getCookie(request, name) {
+function getCookie(request: Request, name: string): string {
   let result = ''
   const cookieString = request.headers.get('Cookie')
   if (cookieString) {
@@ -30,3 +30,5 @@ function getCookie(request, name) {
   }
   return result
 }
+
+export {}

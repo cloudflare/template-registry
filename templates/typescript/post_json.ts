@@ -1,7 +1,9 @@
 async function handleRequest() {
   const init = {
+    body: JSON.stringify(body),
+    method: 'POST',
     headers: {
-      'content-type': 'text/html;charset=UTF-8',
+      'content-type': 'application/json;charset=UTF-8',
     },
   }
   const response = await fetch(url, init)
@@ -16,7 +18,7 @@ addEventListener('fetch', event => {
  * Use await gatherResponse(..) in an async function to get the response body
  * @param {Response} response
  */
-async function gatherResponse(response) {
+async function gatherResponse(response: Response): Promise<string> {
   const { headers } = response
   const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
@@ -30,8 +32,17 @@ async function gatherResponse(response) {
   }
 }
 /**
- * Example someHost at url is set up to respond with HTML
+ * Example someHost is set up to take in a JSON request
  * Replace url with the host you wish to send requests to
+ * @param {string} url the URL to send the request to
+ * @param {BodyInit} body the JSON data to send in the request
  */
 const someHost = 'https://workers-tooling.cf/demos'
-const url = someHost + '/static/html'
+const url = someHost + '/requests/json'
+const body = {
+  results: ['default data to send'],
+  errors: null,
+  msg: 'I sent this to the fetch',
+}
+
+export {}

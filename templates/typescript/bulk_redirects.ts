@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   const requestURL = new URL(request.url)
   const path = requestURL.pathname.split('/redirect')[1]
   const location = redirectMap.get(path)
@@ -18,3 +18,5 @@ const redirectMap = new Map([
   ['/bulk3', 'https://' + externalHostname + '/redirect4'],
   ['/bulk4', 'https://google.com'],
 ])
+
+export {}

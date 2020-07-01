@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   const psk = request.headers.get(PRESHARED_AUTH_HEADER_KEY)
   if (psk === PRESHARED_AUTH_HEADER_VALUE) {
     // Correct preshared header key supplied. Fetching request
@@ -19,3 +19,5 @@ addEventListener('fetch', event => {
  */
 const PRESHARED_AUTH_HEADER_KEY = 'X-Custom-PSK'
 const PRESHARED_AUTH_HEADER_VALUE = 'mypresharedkey'
+
+export {}

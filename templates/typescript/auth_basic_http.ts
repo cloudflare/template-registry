@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   if (!request.headers.has('authorization')) {
     return getUnauthorizedResponse(
       'Provide User Name and Password to access this page.',
@@ -21,7 +21,7 @@ addEventListener('fetch', event => {
  * @param {string} authorization
  * @returns {string[]}
  */
-function parseCredentials(authorization) {
+function parseCredentials(authorization: string): string[] {
   const parts = authorization.split(' ')
   const plainAuth = atob(parts[1])
   const credentials = plainAuth.split(':')
@@ -32,7 +32,7 @@ function parseCredentials(authorization) {
  * @param {string} message
  * @returns {Response}
  */
-function getUnauthorizedResponse(message) {
+function getUnauthorizedResponse(message: string): Response {
   const response = new Response(message, {
     status: 401,
   })
@@ -48,3 +48,5 @@ function getUnauthorizedResponse(message) {
 const USERNAME = 'demouser'
 const PASSWORD = 'demopassword'
 const REALM = 'Secure Area'
+
+export {}
