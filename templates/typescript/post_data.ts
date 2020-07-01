@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   const reqBody = await readRequestBody(request)
   const retBody = `The request body sent in was ${reqBody}`
   return new Response(retBody)
@@ -20,7 +20,7 @@ addEventListener('fetch', event => {
  * into the worker script
  * @param {string} html
  */
-function rawHtmlResponse(html) {
+function rawHtmlResponse(html: string): Response {
   const init = {
     headers: {
       'content-type': 'text/html;charset=UTF-8',
@@ -33,7 +33,7 @@ function rawHtmlResponse(html) {
  * Use await readRequestBody(..) in an async function to get the string
  * @param {Request} request the incoming request to read from
  */
-async function readRequestBody(request) {
+async function readRequestBody(request: Request): Promise<string> {
   const { headers } = request
   const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
@@ -44,7 +44,7 @@ async function readRequestBody(request) {
     return await request.text()
   } else if (contentType.includes('form')) {
     const formData = await request.formData()
-    const body = {}
+    const body: { [key: string]: FormDataEntryValue } = {}
     for (const entry of formData.entries()) {
       body[entry[0]] = entry[1]
     }
@@ -77,3 +77,5 @@ const someForm = `
   </body>
   </html>
   `
+
+export {}

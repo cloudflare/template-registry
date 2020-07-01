@@ -25,3 +25,5 @@ const someHTML = `<!DOCTYPE html>
   </body>
 </html>
 `
+
+export {}

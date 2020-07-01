@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest() {
   const init = {
     body: JSON.stringify(body),
     method: 'POST',
@@ -11,7 +11,7 @@ async function handleRequest(request) {
   return new Response(results, init)
 }
 addEventListener('fetch', event => {
-  return event.respondWith(handleRequest(event.request))
+  return event.respondWith(handleRequest())
 })
 /**
  * gatherResponse awaits and returns a response body as a string.
@@ -20,9 +20,9 @@ addEventListener('fetch', event => {
  */
 async function gatherResponse(response) {
   const { headers } = response
-  const contentType = headers.get('content-type')
+  const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
-    return await response.json()
+    return JSON.stringify(await response.json())
   } else if (contentType.includes('application/text')) {
     return await response.text()
   } else if (contentType.includes('text/html')) {

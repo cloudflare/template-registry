@@ -1,4 +1,4 @@
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   try {
     const tlsVersion = request.cf.tlsVersion
     // Allow only TLS versions 1.2 and 1.3
@@ -20,3 +20,5 @@ async function handleRequest(request) {
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
+
+export {}

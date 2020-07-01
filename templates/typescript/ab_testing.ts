@@ -1,4 +1,4 @@
-function handleRequest(request) {
+function handleRequest(request: Request): Response {
   const NAME = 'experiment-0'
   // The Responses below are placeholders. You can set up a custom path for each test (e.g. /control/somepath ).
   const TEST_RESPONSE = new Response('Test group') // e.g. await fetch('/test/sompath', request)
@@ -17,6 +17,9 @@ function handleRequest(request) {
     return response
   }
 }
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
+
+export {}

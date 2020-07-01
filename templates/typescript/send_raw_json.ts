@@ -14,3 +14,5 @@ const someJSON = {
   errors: null,
   msg: 'this is some random json',
 }
+
+export {}

@@ -1,12 +1,15 @@
 async function handleRequest() {
   const init = {
     headers: {
-      'content-type': 'text/html;charset=UTF-8',
+      'content-type': type,
     },
   }
-  const response = await fetch(url, init)
-  const results = await gatherResponse(response)
-  return new Response(results, init)
+  const responses = await Promise.all([fetch(url1, init), fetch(url2, init)])
+  const results = await Promise.all([
+    gatherResponse(responses[0]),
+    gatherResponse(responses[1]),
+  ])
+  return new Response(results.join(), init)
 }
 addEventListener('fetch', event => {
   return event.respondWith(handleRequest())
@@ -16,7 +19,7 @@ addEventListener('fetch', event => {
  * Use await gatherResponse(..) in an async function to get the response body
  * @param {Response} response
  */
-async function gatherResponse(response) {
+async function gatherResponse(response: Response): Promise<string> {
   const { headers } = response
   const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
@@ -30,8 +33,14 @@ async function gatherResponse(response) {
   }
 }
 /**
- * Example someHost at url is set up to respond with HTML
- * Replace url with the host you wish to send requests to
+ * Example someHost is set up to return JSON responses
+ * Replace url1 and url2  with the hosts you wish to
+ * send requests to
+ * @param {string} url the URL to send the request to
  */
 const someHost = 'https://workers-tooling.cf/demos'
-const url = someHost + '/static/html'
+const url1 = someHost + '/requests/json'
+const url2 = someHost + '/requests/json'
+const type = 'application/json;charset=UTF-8'
+
+export {}
