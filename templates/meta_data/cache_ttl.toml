@@ -2,7 +2,7 @@ id = "cache_ttl"
 weight = 1
 type = "snippet"
 title = "Cache using fetch"
-description = "Determine how/if to cache a resource by setting TTLs, custom cache keys, and cache headers in a fetch [`request`](/reference/apis/request/) to gain granular control of browsers' and Cloudflare's caches for even your dynamic assets like caching HTML. "
+description = "Determine how/if to cache a resource by setting TTLs, custom cache keys, and cache headers in a fetch [`request`](/workers/reference/apis/request/) to gain granular control of browsers' and Cloudflare's caches for even your dynamic assets like caching HTML. "
 
 [demos.main]
 text = "Demo"

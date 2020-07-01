@@ -2,4 +2,4 @@ id = "rewrite_links_html"
 weight = 1
 type = "snippet"
 title = "Rewrite links in HTML"
-description = "Rewrite URL links in HTML using [HTML Rewriter](/reference/apis/html-rewriter)"
+description = "Rewrite URL links in HTML using [HTMLRewriter](/workers/reference/apis/html-rewriter)"
