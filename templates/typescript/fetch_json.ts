@@ -1,15 +1,12 @@
 async function handleRequest(): Promise<Response> {
   const init = {
     headers: {
-      'content-type': type,
+      'content-type': 'application/json;charset=UTF-8',
     },
   }
-  const responses = await Promise.all([fetch(url1, init), fetch(url2, init)])
-  const results = await Promise.all([
-    gatherResponse(responses[0]),
-    gatherResponse(responses[1]),
-  ])
-  return new Response(results.join(), init)
+  const response = await fetch(url, init)
+  const results = await gatherResponse(response)
+  return new Response(results, init)
 }
 addEventListener('fetch', event => {
   return event.respondWith(handleRequest())
@@ -23,7 +20,7 @@ async function gatherResponse(response: Response): Promise<string> {
   const { headers } = response
   const contentType = headers.get('content-type') || ''
   if (contentType.includes('application/json')) {
-    return await response.json()
+    return JSON.stringify(await response.json())
   } else if (contentType.includes('application/text')) {
     return await response.text()
   } else if (contentType.includes('text/html')) {
@@ -33,14 +30,12 @@ async function gatherResponse(response: Response): Promise<string> {
   }
 }
 /**
- * Example someHost is set up to return JSON responses
- * Replace url1 and url2  with the hosts you wish to
- * send requests to
+ * Example someHost is set up to take in a JSON request
+ * Replace url with the host you wish to send requests to
+ * @param {string} someHost the host to send the request to
  * @param {string} url the URL to send the request to
  */
 const someHost = 'https://workers-tooling.cf/demos'
-const url1 = someHost + '/requests/json'
-const url2 = someHost + '/requests/json'
-const type = 'application/json;charset=UTF-8'
+const url = someHost + '/static/json'
 
 export {}
