@@ -1,7 +1,7 @@
 async function handleRequest() {
   const init = {
     headers: {
-      'content-type': 'application/jsoncharset=UTF-8',
+      'content-type': 'application/json;charset=UTF-8',
     },
   }
   const response = await fetch(url, init)
