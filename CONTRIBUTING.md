@@ -192,7 +192,7 @@ url = "" # a live demo of your code (can be an array)
 ### Boilerplate Only
 
 1. Host a public repo, and then test your project by running `wrangler generate https://github.com/<you>/<id>`.
-2. Hava a developer from Cloudflare's DX team review your code
+2. Have a developer from Cloudflare's DX team review your code
 
 
 
