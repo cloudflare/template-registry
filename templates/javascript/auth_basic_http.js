@@ -28,7 +28,7 @@ function parseCredentials(authorization) {
   return credentials
 }
 /**
- * Helper funtion to generate Response object
+ * Helper function to generate Response object
  * @param {string} message
  * @returns {Response}
  */

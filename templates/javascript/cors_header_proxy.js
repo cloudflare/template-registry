@@ -19,7 +19,7 @@ async function handleRequest(request) {
   return response
 }
 function handleOptions(request) {
-  // Make sure the necesssary headers are present
+  // Make sure the necessary headers are present
   // for this to be a valid pre-flight request
   if (
     request.headers.get('Origin') !== null &&
