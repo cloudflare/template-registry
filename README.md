@@ -14,7 +14,7 @@ To contribute see [CONTRIBUTING](./CONTRIBUTING.md)
 
 ## Get Started
 
-To run for developement
+To run for development
 
 ```
 npm install

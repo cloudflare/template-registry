@@ -16,7 +16,7 @@ addEventListener('fetch', event => {
   }
 })
 /**
- * rawHtmlResponse delievers a response with HTML inputted directly
+ * rawHtmlResponse delivers a response with HTML inputted directly
  * into the worker script
  * @param {string} html
  */

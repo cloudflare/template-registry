@@ -6,7 +6,7 @@ async function handleRequest(request) {
   if (BLOCKED_HOSTNAMES.includes(url.hostname)) {
     return new Response('Blocked Host', { status: 403 })
   }
-  // On URL's file extenstion (e.g. block paths ending in .doc or .xml)
+  // On URL's file extension (e.g. block paths ending in .doc or .xml)
   const forbiddenExtRegExp = new RegExp(/\.(doc|xml)$/)
   if (forbiddenExtRegExp.test(url.pathname)) {
     return new Response('Blocked Extension', { status: 403 })
