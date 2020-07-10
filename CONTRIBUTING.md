@@ -17,7 +17,7 @@ This repository supplies the list of templates that appear in the [Template Gall
 There are two types of templates:
 
 - *Snippet*: A simple template whose content lives in a single TypeScript file in this repository in the `templates/typescript` directory. A snippet’s code will be displayed inline in the Template Gallery. Snippets are short and intended for users to copy-and-paste into their own projects, or use as a reference.
-- *Boilerplate*: A more-complex template whose content lives in a separate repository, may consist of multiple files, and can be used to generate a new project by invoking `wrangler generate path-to-template-repository`. Their content is not displayed directly in the Workers documentation; rather, each boilerplate includes a link to the source repository and a `wrangler generate` command to create a project from the boilerplate. They often have more detailed documentation, either in the template repository’s `README`, or in an article in the Workers docs [like this one](https://github.com/cloudflare/workers-docs/blob/master/workers-docs/src/content/templates/pages/graphql_server.md).
+- *Boilerplate*: A more-complex template in any programming language, whose content lives in a separate repository, may consist of multiple files, and can be used to generate a new project by invoking `wrangler generate path-to-template-repository`. Their content is not displayed directly in the Workers documentation; rather, each boilerplate includes a link to the source repository and a `wrangler generate` command to create a project from the boilerplate. They often have more detailed documentation, either in the template repository’s `README`, or in an article in the Workers docs [like this one](https://github.com/cloudflare/workers-docs/blob/master/workers-docs/src/content/templates/pages/graphql_server.md).
 
 ## Template Metadata
 
@@ -119,10 +119,12 @@ Example boilerplate templates include:
 
 * [cloudflare/worker-template](https://github.com/cloudflare/worker-template)
 * [EverlastingBugstopper/worker-typescript-template](https://github.com/EverlastingBugstopper/worker-typescript-template)
+* [cloudflare/rustwasm-worker-template](https://github.com/cloudflare/rustwasm-worker-template)
+* [cloudflare/worker-emscripten-template](https://github.com/cloudflare/worker-emscripten-template)
+* [cloudflare/cobol-worker-template](https://github.com/cloudflare/cobol-worker-template)
 * [signalnerve/workers-graphql-server](https://github.com/signalnerve/workers-graphql-server)
 * [cloudflare/worker-sites-template](https://github.com/cloudflare/worker-sites-template)
 * [cloudflare/worker-template-router](https://github.com/cloudflare/worker-template-router)
-* [cloudflare/cobol-worker-template](https://github.com/cloudflare/cobol-worker-template)
 
 You can write additional documentation about your template that will be displayed in the Workers documentation, like this:
 
