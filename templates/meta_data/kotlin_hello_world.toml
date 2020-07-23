@@ -1,0 +1,6 @@
+id = "kotlin_hello_world"
+weight = 1
+type = "boilerplate"
+title = "Kotlin Hello World"
+description = "Return a Hello World Response in Kotlin"
+repository_url = "https://github.com/cloudflare/kotlin-worker-hello-world"

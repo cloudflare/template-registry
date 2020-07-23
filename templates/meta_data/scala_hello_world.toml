@@ -1,0 +1,6 @@
+id = "scala_hello_world"
+weight = 1
+type = "boilerplate"
+title = "Scala Hello World"
+description = "Return a Hello World Response in Scala"
+repository_url = "https://github.com/cloudflare/scala-worker-hello-world"
