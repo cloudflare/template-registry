@@ -1,0 +1,6 @@
+id = "reason_hello_world"
+weight = 1
+type = "boilerplate"
+title = "Reason Hello World"
+description = "Return a Hello World Response in Reason"
+repository_url = "https://github.com/cloudflare/reason-worker-hello-world"

@@ -1,0 +1,6 @@
+id = "python_hello_world"
+weight = 1
+type = "boilerplate"
+title = "Python Hello World"
+description = "Return a Hello World Response in Python"
+repository_url = "https://github.com/cloudflare/python-worker-hello-world"

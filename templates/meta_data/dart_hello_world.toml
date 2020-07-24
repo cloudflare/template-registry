@@ -1,0 +1,6 @@
+id = "dart_hello_world"
+weight = 1
+type = "boilerplate"
+title = "Dart Hello World"
+description = "Return a Hello World Response in Dart"
+repository_url = "https://github.com/cloudflare/dart-worker-hello-world"
