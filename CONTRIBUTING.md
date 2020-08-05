@@ -111,7 +111,7 @@ wrangler generate https://github.com/path/to/template
 
 `wrangler` clones the repo containing the boilerplate template and performs some simple templating logic using [`cargo-generate`](https://github.com/ashleygwilliams/cargo-generate).
 
-Refer to the [documentation of `cargo-generate`](https://github.com/ashleygwilliams/cargo-generate/blob/master/README.md) for information about template placeholders like `{{ project-name }}` and `{{ authors }}`, as well as the use of a `.genignore` file or the `exclude` and `include` directives to determine which files from the template repository should end up in the user’s generated project directory.
+Refer to the [documentation of `cargo-generate`](https://github.com/ashleygwilliams/cargo-generate/blob/master/README.md) for information about template placeholders like `{{ project-name }}` and `{{ authors }}`, as well as the use of a `.genignore` file to determine which files from the template repository should end up in the user’s generated project directory. If there are binary or other files that you need to exclude from placeholder substitution, see the [documentation for cargo-generate.toml](https://github.com/ashleygwilliams/cargo-generate#include--exclude).
 
 Boilerplate templates should not contain any generated artifacts, like the `worker` directory of a default `wrangler` project.
 
