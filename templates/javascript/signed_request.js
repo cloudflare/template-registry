@@ -35,6 +35,7 @@ async function signResponse(responseBody, response) {
     key,
     new TextEncoder().encode(responseBody),
   )
+  // Convert Uint8Array to Base64
   const sigHash = btoa(String.fromCharCode(...new Uint8Array(signature)))
   response.headers.set('signature', sigHash)
   return response
@@ -42,14 +43,12 @@ async function signResponse(responseBody, response) {
 async function verifySignature(request) {
   const signature = request.headers.get('signature') || ''
   const key = await importKey(SECRET)
-
+  // Convert Base64 to Uint8Array
+  const sigBuf = Uint8Array.from(atob(signature), c => c.charCodeAt(0))
   return await crypto.subtle.verify(
     'HMAC',
     key,
-    base64ToUint8Array(signature),
+    sigBuf,
     new TextEncoder().encode(await request.text()),
   )
-}
-function base64ToUint8Array(base64) {
-  return Uint8Array.from(atob(base64), c => c.charCodeAt(0))
 }
