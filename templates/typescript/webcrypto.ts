@@ -1,5 +1,3 @@
-let subtle = self.crypto.subtle;
-
 async function handleRequest() {
   let msg = "alice and bob"
   let hmacresult = await generateSignandVerify({
@@ -26,17 +24,17 @@ addEventListener('fetch', event => {
 
 async function generateSignandVerify(algorithm: any) {
   let rawMessage = "alice and bob"
-  let key = await subtle.generateKey(algorithm, true, ["sign", "verify"]);
+  let key  = await self.crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]) as CryptoKey;
   let enc = new TextEncoder();
   let encoded = enc.encode(rawMessage);
   let signature = await self.crypto.subtle.sign(
     algorithm,
-    key as CryptoKey,
+    key,
     encoded
   );
   let result = await self.crypto.subtle.verify(
     algorithm,
-    key as CryptoKey,
+    key,
     signature,
     encoded
   );
@@ -44,22 +42,22 @@ async function generateSignandVerify(algorithm: any) {
 }
 
 async function generateEncryptDecrypt(algorithm: any, msg: string) {
-  let key = await subtle.generateKey(
+  let key = await self.crypto.subtle.generateKey(
     algorithm,
     true,
     ["encrypt", "decrypt"]
-  );
+  ) as CryptoKey;
   let enc = new TextEncoder();
   let encoded = enc.encode(msg);
   algorithm.iv = crypto.getRandomValues(new Uint8Array(16))
   let signature = await self.crypto.subtle.encrypt(
     algorithm,
-    key as CryptoKey,
+    key,
     encoded
   );
   let result = await self.crypto.subtle.decrypt(
     algorithm,
-    key as CryptoKey,
+    key,
     signature
   );
   return result;

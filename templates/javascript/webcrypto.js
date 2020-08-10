@@ -1,5 +1,4 @@
 "use strict";
-let subtle = self.crypto.subtle;
 async function handleRequest() {
     let msg = "alice and bob";
     let hmacresult = await generateSignandVerify({
@@ -25,7 +24,7 @@ addEventListener('fetch', event => {
 });
 async function generateSignandVerify(algorithm) {
     let rawMessage = "alice and bob";
-    let key = await subtle.generateKey(algorithm, true, ["sign", "verify"]);
+    let key = await self.crypto.subtle.generateKey(algorithm, true, ["sign", "verify"]);
     let enc = new TextEncoder();
     let encoded = enc.encode(rawMessage);
     let signature = await self.crypto.subtle.sign(algorithm, key, encoded);
@@ -33,7 +32,7 @@ async function generateSignandVerify(algorithm) {
     return result;
 }
 async function generateEncryptDecrypt(algorithm, msg) {
-    let key = await subtle.generateKey(algorithm, true, ["encrypt", "decrypt"]);
+    let key = await self.crypto.subtle.generateKey(algorithm, true, ["encrypt", "decrypt"]);
     let enc = new TextEncoder();
     let encoded = enc.encode(msg);
     algorithm.iv = crypto.getRandomValues(new Uint8Array(16));
