@@ -1,4 +1,3 @@
-"use strict";
 async function handleRequest() {
     let msg = "alice and bob";
     let hmacresult = await generateSignandVerify({
