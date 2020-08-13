@@ -5,7 +5,7 @@ async function handleRequest(request) {
   if (location) {
     return Response.redirect(location, 301)
   }
-  // If in map, return the original request
+  // If not in map, return the original request
   return fetch(request)
 }
 addEventListener('fetch', async event => {
