@@ -1,0 +1,6 @@
+id = "fable_hello_world"
+weight = 1
+type = "boilerplate"
+title = "Fable Hello World"
+description = "'Hello World' worker written in Fable/FSharp"
+repository_url = "https://github.com/fable-compiler/cfworker-hello-world"
