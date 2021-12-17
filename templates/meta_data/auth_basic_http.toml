@@ -7,5 +7,5 @@ repository_url = "https://github.com/south-lane/cf-worker-basic-http-auth"
 
 [demos.main]
 text = "Demo (credentials: demouser/demopassword)"
-url = "https://cloudflareworkers.com/#f5d2cc53bd3d55486ddd14b1eb6e6c83:https://www.cloudflarestatus.com/"
+url = ""
 tags = [ "Middleware" ]

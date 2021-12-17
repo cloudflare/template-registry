@@ -53,7 +53,7 @@ For Javascript snippets and boilerplates, please make sure your code is ran thro
 }
 ```
 
-For boilerplates this will be done automatically, but for snippets you can do this using the [template creator](https://github.com/victoriabernard92/workers-template-creator) or following a [tutorial on using prettier](https://medium.com/dailyjs/getting-started-with-prettier-writing-clean-concise-code-6838e0912175).
+For boilerplates this will be done automatically, but for snippets you can do this using by following a [tutorial on using prettier](https://medium.com/dailyjs/getting-started-with-prettier-writing-clean-concise-code-6838e0912175).
 
 ## Thanks
 
