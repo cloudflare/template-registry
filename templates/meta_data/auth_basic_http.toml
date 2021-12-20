@@ -3,9 +3,9 @@ weight = 1
 type = "snippet"
 title = "Basic HTTP authentication"
 description = "Password-protect whole websites or specific areas/pages. Browsers will prompt for a password and username - hardcoded as `demouser`/`demopassword` - before serving a protected page. This uses basic authentication through the [`WWW-Authorization` header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).
-repository_url = "https://github.com/south-lane/cf-worker-basic-http-auth"
+repository_url = ""
 
 [demos.main]
 text = "Demo (credentials: demouser/demopassword)"
-url = ""
+url = "https://cloudflareworkers.com/#f5d2cc53bd3d55486ddd14b1eb6e6c83:https://www.cloudflarestatus.com/"
 tags = [ "Middleware" ]
