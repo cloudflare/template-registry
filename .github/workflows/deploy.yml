@@ -20,7 +20,7 @@ jobs:
     - name: Build
       run: npm run build
     - name: Publish
-      uses: signalnerve/wrangler-action@1.0.0
+      uses: cloudflare/wrangler-action@1.0.0
       with:
         apiKey: ${{ secrets.CF_API_KEY }}
         email: ${{ secrets.CF_EMAIL }}
