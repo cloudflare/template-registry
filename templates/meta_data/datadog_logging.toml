@@ -1,0 +1,6 @@
+id = "datadog_logging"
+weight = 1
+type = "snippet"
+title = "Datadog Logging Integratoin"
+description = "Log from your Workers application to Datadog's logging service"
+share_url = "/templates/snippets/datadog_logging"
