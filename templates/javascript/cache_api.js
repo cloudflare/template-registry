@@ -14,7 +14,7 @@ async function handleRequest(event) {
     response = new Response(response.body, response)
     // Cache API respects Cache-Control headers, so by setting max-age to 10
     // the response will only live in cache for max of 10 seconds
-    response.headers.append('Cache-Control', 'max-age=10')
+    response.headers.set('Cache-Control', 'max-age=10')
     // store the fetched response as cacheKey
     // use waitUntil so computational expensive tasks don't delay the response
     event.waitUntil(cache.put(cacheKey, response.clone()))
